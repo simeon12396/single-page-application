@@ -7,7 +7,7 @@
             <v-toolbar-title>Sign in</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
-            <v-form @submit.prevent="submitSignin">
+            <v-form @submit.prevent="submitSignInForm">
               <v-text-field v-model="formData.email" prepend-icon="email" name="email" label="Email" type="email"></v-text-field>
               <v-text-field v-model="formData.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
               <v-card-actions>
@@ -25,7 +25,7 @@
 <script>
 
 export default {
-  name: 'Signin',
+  name: 'SignIn',
   data() {
     return {
       formData: {
@@ -35,8 +35,8 @@ export default {
     }
   },
   methods: {
-    submitSignin() {
-      this.$store.dispatch('submitSignin', this.formData);
+    submitSignInForm() {
+      this.$store.dispatch('submitSignInForm', this.formData);
     }
   }
 }
