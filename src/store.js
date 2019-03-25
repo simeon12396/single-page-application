@@ -24,34 +24,34 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    submitSignup({commit}, payload) {
+    submitSignUpForm({commit}, payload) {
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
       .then(userData => {
-        console.log('SIGNUP!');
         commit('setUser', userData);
         commit('setIsAuthenticated', true);
+        alert('Your account has been created and you are now connected!');
         router.push('/');
       })
-      .catch(() => {
-        console.log('ERROR SIGNUP!');
+      .catch((error) => {
         commit('setUser', null);
         commit('setIsAuthenticated', false);
+        alert('Oops. ' + error.message);
       })
     },
-    submitSignin({commit}, payload) {
+    submitSignInForm({commit}, payload) {
       firebase
       .auth()
       .signInWithEmailAndPassword(payload.email, payload.password)
       .then(userData => {
-        console.log('CREATED SIGNIN!');
         commit('setUser', userData);
         commit('setIsAuthenticated', true);
+        alert('Well done! You are now connected!');
         router.push('/');
       })
       .catch((error) => {
-        console.log('ERROR SIGNIN!');
         commit('setUser', null);
         commit('setIsAuthenticated', false);
+        alert('Oops. ' + error.message);
       })
     },
     logoutUser({commit}) {
@@ -59,7 +59,6 @@ export default new Vuex.Store({
       .auth()
       .signOut()
       .then(() => {
-        console.log('LOGOUT SUCCESS');
         commit('setUser', null);
         commit('setIsAuthenticated', false);
         router.push('/signin');

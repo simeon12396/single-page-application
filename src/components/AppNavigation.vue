@@ -27,6 +27,7 @@ export default {
     }
   },
   computed: {
+    //return answer whether user is authenticated or not. If it's - return true, if it's - not return false.
     isAuthenticated() {
       return this.$store.getters.getIsAuthenticated;
     }
