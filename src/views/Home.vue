@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-carousel>
+    <v-carousel-item v-for="(slide, index) in slides" :key="index" :src="slide.src"></v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
+  name: "Home",
+  data() {
+    return {
+      slides: [
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+        }
+      ]
+    };
   }
 };
 </script>
+
+<style scoped>
+
+</style>
