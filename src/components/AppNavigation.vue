@@ -5,13 +5,22 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat to="/signup" v-if="!isAuthenticated">
-        <v-icon size="1.5rem" color="blue darken-2">fas fa-user-plus</v-icon>
+      <v-btn flat to="/products">
+        <span>Products</span>
       </v-btn>
-      <v-btn flat to="/signin" v-if="!isAuthenticated">
-        <v-icon size="1.5rem" color="blue darken-2">fas fa-user</v-icon>
+      <v-btn flat to="/dashboard">
+        <span>Dashboard</span>
       </v-btn>
-      <v-btn flat @click="logoutUser" v-else>
+      <v-btn flat to="/favorites">
+        <span>Favorites</span>
+      </v-btn>
+      <v-btn flat to="/signup">
+        <span>Sign Up</span>
+      </v-btn>
+      <v-btn flat to="/signin">
+        <span>Sign in</span>
+      </v-btn>
+      <v-btn flat @click="logoutUser"> 
         <v-icon size="1.5rem" color="blue darken-2">fas fa-sign-out-alt</v-icon>
       </v-btn>
     </v-toolbar-items>
