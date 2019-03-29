@@ -25,11 +25,13 @@ export default new Vuex.Store({
   },
   actions: {
     submitSignUpForm({commit}, payload) {
-      firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
+      firebase
+      .auth()
+      .createUserWithEmailAndPassword(payload.email, payload.password)
       .then(userData => {
         commit('setUser', userData);
         commit('setIsAuthenticated', true);
-        alert('Your account has been created and you are now connected!');
+        alert(`Your account has been created and you are now connected with ${userData.user.email}!`);
         router.push('/');
       })
       .catch((error) => {
@@ -45,7 +47,7 @@ export default new Vuex.Store({
       .then(userData => {
         commit('setUser', userData);
         commit('setIsAuthenticated', true);
-        alert('Well done! You are now connected!');
+        alert(`Well done! You are now connected with ${userData.user.email}!`);
         router.push('/');
       })
       .catch((error) => {
@@ -61,7 +63,7 @@ export default new Vuex.Store({
       .then(() => {
         commit('setUser', null);
         commit('setIsAuthenticated', false);
-        router.push('/signin');
+        router.push('/');
       })
     }
   }
