@@ -66,23 +66,35 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(route => route.meta.requiresAuth);
   const requiresGuest = to.matched.some(route => route.meta.requiresGuest);
-  const currentUser = firebase.auth().currentUser;
 
-  if(requiresAuth && !currentUser) {
-    console.log(firebase.auth().currentUser);
-    next('/signin');
-  } 
-  else if(requiresAuth && currentUser) {
-    console.log(firebase.auth().currentUser);
-    next();
-  } 
-  else if(requiresGuest && currentUser) {
-    next('/');
-  }
-  else {
-    next();
-  };
+  firebase.auth().onAuthStateChanged((user) =>{
+    /*
+      Check the user is signed in or not.
 
+      If (user) {
+        //user is signed in.
+      }
+      else {
+        //No user is signed in.
+      }
+     */
+    
+    if (user && requiresAuth) {
+      next();
+    } 
+    else if (!user && requiresAuth) {
+      next('/signin');
+    }
+    else if (user && requiresGuest) {
+      next('/');
+    }
+    else if (!user && requiresGuest) {
+      next();
+    }
+    else {
+      next();
+    }
+  });
 });
 
 export default router;
