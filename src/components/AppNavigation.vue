@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <v-toolbar dark color="rgba(0,0,0,0.5)">
     <v-toolbar-title> 
       <v-btn flat to="/"> {{toolbarTitle}} </v-btn>
     </v-toolbar-title>

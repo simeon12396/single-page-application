@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>Products</span>
+    <h1>Products</h1>
   </div>
 </template>
 
@@ -9,3 +9,8 @@ export default {
   name: 'Products'
 }
 </script>
+
+<style lang="scss">
+ 
+</style>
+
