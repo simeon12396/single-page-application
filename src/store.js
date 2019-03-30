@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import firebase from 'firebase';
 import router from './router.js';
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
@@ -10,6 +11,7 @@ export default new Vuex.Store({
     user: null,
     isAuthenticated: false
   },
+  plugins: [createPersistedState()],
   getters: {
     getIsAuthenticated(state) {
       return state.isAuthenticated;
@@ -25,8 +27,7 @@ export default new Vuex.Store({
   },
   actions: {
     submitSignUpForm({commit}, payload) {
-      firebase
-      .auth()
+      firebase.auth()
       .createUserWithEmailAndPassword(payload.email, payload.password)
       .then(userData => {
         commit('setUser', userData);
@@ -34,10 +35,8 @@ export default new Vuex.Store({
         alert(`Your account has been created and you are now connected with ${userData.user.email}!`);
         router.push('/');
       })
-      .catch((error) => {
-        commit('setUser', null);
-        commit('setIsAuthenticated', false);
-        alert('Oops. ' + error.message);
+      .catch((signUpError) => {
+        alert('Oops. ' + signUpError.message);
       })
     },
     submitSignInForm({commit}, payload) {
@@ -50,10 +49,8 @@ export default new Vuex.Store({
         alert(`Well done! You are now connected with ${userData.user.email}!`);
         router.push('/');
       })
-      .catch((error) => {
-        commit('setUser', null);
-        commit('setIsAuthenticated', false);
-        alert('Oops. ' + error.message);
+      .catch((signInError) => {
+        alert('Oops. ' + signInError.message);
       })
     },
     logoutUser({commit}) {
@@ -63,7 +60,7 @@ export default new Vuex.Store({
       .then(() => {
         commit('setUser', null);
         commit('setIsAuthenticated', false);
-        router.push('/');
+        router.push('/signup');
       })
     }
   }
