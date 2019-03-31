@@ -7,7 +7,7 @@
             <v-toolbar-title>Sign in</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
-            <v-form @submit.prevent="submitSignInForm">
+            <v-form @submit.prevent="submitSignInForm(formData)">
               <v-text-field v-model="formData.email" prepend-icon="email" name="email" label="Email" type="email"></v-text-field>
               <v-text-field v-model="formData.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
               <v-card-actions>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'SignIn',
@@ -35,9 +36,12 @@ export default {
     }
   },
   methods: {
-    submitSignInForm() {
-      this.$store.dispatch('submitSignInForm', this.formData);
-    }
+    /*
+      submitSignInForm() { this.$store.dispatch('submitSignInForm', this.formData); } -> is equal to code below!
+    */
+   ...mapActions([
+     'submitSignInForm'
+   ])
   }
 }
 </script>

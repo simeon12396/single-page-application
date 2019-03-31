@@ -7,7 +7,7 @@
             <v-toolbar-title>Sign up</v-toolbar-title>
           </v-toolbar>  
           <v-card-text>
-            <v-form @submit.prevent="submitSignUpForm">
+            <v-form @submit.prevent="submitSignUpForm(formData)">
               <v-text-field v-model="formData.name" prepend-icon="person" name="name" label="Name" type="text"></v-text-field>
               <v-text-field v-model="formData.email" prepend-icon="email" name="email" label="Email" type="email"></v-text-field>
               <v-text-field v-model="formData.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'SignUp',
@@ -37,9 +38,12 @@ export default {
     }
   },
   methods: {
-    submitSignUpForm() {
-      this.$store.dispatch('submitSignUpForm', this.formData);
-    }
+    /*
+      submitSignUpForm() { this.$store.dispatch('submitSignUpForm', this.formData); } -> is equal code below!
+    */
+   ...mapActions([
+     'submitSignUpForm'
+   ])
   }
 }
 </script>
