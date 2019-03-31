@@ -8,16 +8,16 @@
       <v-btn flat to="/products">
         <span>Products</span>
       </v-btn>
-      <v-btn flat to="/dashboard" v-if="isAuthenticated">
+      <v-btn flat to="/dashboard" v-if="getIsAuthenticated">
         <span>Dashboard</span>
       </v-btn>
-      <v-btn flat to="/favorites" v-if="isAuthenticated">
+      <v-btn flat to="/favorites" v-if="getIsAuthenticated">
         <span>Favorites</span>
       </v-btn>
-      <v-btn flat to="/signup" v-if="!isAuthenticated">
+      <v-btn flat to="/signup" v-if="!getIsAuthenticated">
         <span>Sign Up</span>
       </v-btn>
-      <v-btn flat to="/signin" v-if="!isAuthenticated">
+      <v-btn flat to="/signin" v-if="!getIsAuthenticated">
         <span>Sign in</span>
       </v-btn>
       <v-btn flat @click="logoutUser" v-else> 
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'AppNavigation',
@@ -37,15 +39,20 @@ export default {
     }
   },
   computed: {
-    //return answer whether user is authenticated or not. If it's - return true, if it's not - return false.
-    isAuthenticated() {
-      return this.$store.getters.getIsAuthenticated;
-    }
+    /* 
+      getIsAuthenticated() { return this.$store.getters['getIsAuthenticated']; } -> -> is equal to code below!
+    */  
+    ...mapGetters([
+      'getIsAuthenticated'
+    ])
   },
   methods: {
-    logoutUser() {
-      this.$store.dispatch('logoutUser');
-    }
+    /* 
+      logoutUser() { this.$store.dispatch('logoutUser'); } -> is equal to code below!
+    */
+    ...mapActions([
+      'logoutUser'
+    ])
   }
 }
 </script>
