@@ -11,10 +11,13 @@ export default {
     return {
       slides: [
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+          src: require("../assets/images/steelseries1.png")
         },
         {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+          src: require("../assets/images/steelseries2.png")
+        },
+        {
+          src: require("../assets/images/steelseries3.png")
         }
       ]
     };
@@ -22,6 +25,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import "../styles/components/home.scss";
 
 </style>
+
