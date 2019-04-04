@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <v-container>
+      <v-text-field v-model="formData.title" name="title" label="Title" type="text"></v-text-field>
+      <v-text-field v-model="formData.description" name="description" label="Description" type="text"></v-text-field>
+      <wysiwyg v-model="formData.content"/>
+      <v-text-field v-model="formData.author" name="author" label="Author" type="text"></v-text-field>
+      <div class="text-xs-center">
+        <v-rating v-model="formData.rating"></v-rating>
+      </div>
+      <v-btn type="submit" color="primary" @click="submitAddPost(formData)">
+        <i class="material-icons">create</i>
+      </v-btn>
+    </v-container>
+  </div>
+</template>
+
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+  name: 'AddPost',
+  data() {
+    return {
+      formData: {
+        title: '',
+        description: '',
+        content: '',
+        rating: 2,
+        author: ''
+      }
+    }
+  },
+  methods: {
+    ...mapActions([
+      'submitAddPost'
+    ])
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+  @import "~vue-wysiwyg/dist/vueWysiwyg.css";
+  @import '../styles/components/addPost.scss';
+</style>
+
+

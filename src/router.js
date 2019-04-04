@@ -7,6 +7,7 @@ import Favorites from "./views/Favorites.vue";
 import SignUp from "./views/SignUp.vue";
 import SignIn from "./views/SignIn.vue";
 import firebase from 'firebase';
+import AddPost from "./views/AddPost.vue";
 
 Vue.use(Router);
 
@@ -34,7 +35,14 @@ let router = new Router({
       component: Dashboard,
       meta: {
         requiresAuth: true
-      }
+      },
+      children: [
+        {
+          name: 'AddPost',
+          path: 'add_post',
+          component: AddPost
+        }
+      ]
     },
     {
       name: 'Favorites',

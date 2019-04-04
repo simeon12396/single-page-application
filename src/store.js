@@ -32,11 +32,11 @@ export default new Vuex.Store({
       .then(userData => {
         commit('setUser', userData);
         commit('setIsAuthenticated', true);
-        alert(`Your account has been created and you are now connected with ${userData.user.email}!`);
+        alert(`Your account has been created and you are now connected with ${userData.user.email}!`)
         router.push('/');
       })
       .catch((signUpError) => {
-        alert('Oops. ' + signUpError.message);
+        alert(`Oops. ${signUpError.message}`)
       })
     },
     submitSignInForm({commit}, payload) {
@@ -62,6 +62,11 @@ export default new Vuex.Store({
         commit('setIsAuthenticated', false);
         router.push('/signup');
       })
+    },
+    submitAddPost({commit}, payload) {
+      firebase.database().ref('news').push({ ...payload })
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
     }
   }
 });

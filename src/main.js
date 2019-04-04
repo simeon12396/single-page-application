@@ -4,17 +4,21 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import firebase from 'firebase';
+import 'firebase/firestore';
+import wysiwyg from "vue-wysiwyg";
 
 Vue.config.productionTip = false;
+Vue.use(wysiwyg, {});
 
 let app = '';
 
+ // Initialize Firebase
 firebase.initializeApp({
   apiKey: "AIzaSyD-Ygd2f2oJ6Mboku_iV51ogtNz2ZlEEFs",
   authDomain: "single-page-application-ff8b2.firebaseapp.com",
   databaseURL: "https://single-page-application-ff8b2.firebaseio.com",
   projectId: "single-page-application-ff8b2",
-  storageBucket: "",
+  storageBucket: "single-page-application-ff8b2.appspot.com",
   messagingSenderId: "441199291479"
 });
 
