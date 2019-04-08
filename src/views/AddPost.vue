@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-container>
+      {{getPostStatus}}
       <v-text-field v-model="formData.title" name="title" label="Title" type="text"></v-text-field>
       <v-text-field v-model="formData.description" name="description" label="Description" type="text"></v-text-field>
       <wysiwyg v-model="formData.content"/>
@@ -11,12 +12,15 @@
       <v-btn type="submit" color="primary" @click="submitAddPost(formData)">
         <i class="material-icons">create</i>
       </v-btn>
+      <h1 v-if="alertInfo">Your post was added</h1>
     </v-container>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
+import { setTimeout } from 'timers';
 
 export default {
   name: 'AddPost',
@@ -31,10 +35,31 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapGetters([
+      'getPostStatus'
+    ]),
+    alertInfo() {
+      if(this.getPostStatus) {
+        setTimeout(() => {
+          this.clearPost();
+        }, 3000);
+
+        return true;
+      }
+    }
+  },
   methods: {
     ...mapActions([
       'submitAddPost'
-    ])
+    ]),
+    clearPost() {
+      this.formData.title = '';
+      this.formData.description = '';
+      this.formData.content = '';
+      this.formData.author = '';
+      this.formData.rating = null;
+    }
   }
 }
 </script>

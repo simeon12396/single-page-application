@@ -5,3 +5,28 @@
 .v-btn .v-btn__content .v-icon {
   color: rgba(0,0,0,0.5);
 }
+
+.wrapper-flex-items {
+  flex: 1 1 50%;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .flex-posts {
+    flex-wrap: wrap;
+  
+    .flex {
+      flex: 1 1 45%;
+      margin-bottom: 1rem;
+      margin-right: .5rem;
+
+      .v-card__title,
+      .v-card__actions {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ export default {
   name: 'Dashboard',
   data() {
     return {
-      dashboardImgSrc:"https://cdn.pixabay.com/photo/2019/03/01/17/49/speed-4028234_960_720.jpg",
+      dashboardImgSrc:"https://publicdomainvectors.org/photos/addon_burning_music_cds.png",
       dashboardCntFlag: true
     }
   },
