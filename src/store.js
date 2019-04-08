@@ -9,12 +9,20 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state:{
     user: null,
-    isAuthenticated: false
+    isAuthenticated: false,
+    postStatus: false,
+    fetchAllPosts: {}
   },
   plugins: [createPersistedState()],
   getters: {
     getIsAuthenticated(state) {
       return state.isAuthenticated;
+    },
+    getPostStatus(state) {
+      return state.postStatus;
+    },
+    getFetchAllPosts(state) {
+      return state.fetchAllPosts;
     }
   },
   mutations: {
@@ -23,6 +31,18 @@ export default new Vuex.Store({
     },
     setIsAuthenticated(state, payload) {
       state.isAuthenticated = payload;
+    },
+    setClearPostStatus(state, payload) {
+      state.postStatus = payload;
+    },
+    setPostStatus(state, payload) {
+      state.postStatus = payload;
+    },
+    setResetPostStatus(state, payload) {
+      state.postStatus = payload;
+    },
+    setFetchAllPosts(state, payload) {
+      state.fetchAllPosts = payload;
     }
   },
   actions: {
@@ -64,9 +84,21 @@ export default new Vuex.Store({
       })
     },
     submitAddPost({commit}, payload) {
-      firebase.database().ref('news').push({ ...payload })
-      .then(response => console.log(response))
-      .catch(error => console.log(error))
+      firebase
+      .database()
+      .ref('news')
+      .push( {...payload} );
+      commit('setPostStatus', true);
+      setTimeout(() => {
+        commit('setResetPostStatus', false);
+      }, 3000);
+    },
+    fetchAllPosts({commit}) {
+      firebase.database().ref('news').once('value')
+      .then((dataSnapshot) => {
+        console.log(dataSnapshot.val());
+        commit('setFetchAllPosts', dataSnapshot.val());
+      })
     }
   }
 });

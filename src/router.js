@@ -2,13 +2,14 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Products from './views/Products.vue';
+import News from './views/News.vue';
 import Dashboard from "./views/Dashboard.vue";
 import Favorites from "./views/Favorites.vue";
 import SignUp from "./views/SignUp.vue";
 import SignIn from "./views/SignIn.vue";
 import firebase from 'firebase';
 import AddPost from "./views/AddPost.vue";
-
+import NotFound404 from "./views/NotFound404.vue"
 Vue.use(Router);
 
 let router = new Router({
@@ -16,8 +17,9 @@ let router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      name: 'NotFound404',
       path: '*',
-      redirect: '/'
+      component: NotFound404
     },
     {
       name: 'Home',
@@ -28,6 +30,11 @@ let router = new Router({
       name: 'Products',
       path: '/products',
       component: Products
+    },
+    {
+      name: 'News',
+      path: '/news',
+      component: News
     },
     {
       name: 'Dashboard',
