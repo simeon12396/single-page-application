@@ -1,35 +1,29 @@
-.layout {
-  width: 20vw;
-  margin: 1rem auto 1rem;
-  
+.first-flexbox {
+  margin: 1rem;
+
   .flex {
-    display: flex;
-    justify-content: center;
+    flex: 0 1 auto;
   }
 }
 
-.secondFlex {
-  width: 30vw;
-}
-
-.thirdFlex {
+.third-flexbox {
+  margin: 0 auto;
   width: 70vw;
   justify-content: space-between;
 
-  .flex:first-of-type {
-    flex:0 1 40%;
+  .flex {
+    flex: 0 1 40%;
   }
 
-  .flex:last-of-type {
-    flex:0 1 40%;
+  .flex:nth-of-type(2) {
     display: flex;
     justify-content: center;
     align-items: center;
 
     span {
+      font-family: $base-font-family;
       font-size: 2.5rem;
       text-align: center;
-      width: 70%;
     }
   }
 }

@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
   @import "~vue-wysiwyg/dist/vueWysiwyg.css";
-  @import '../styles/components/addPost.scss';
+  @import '../styles/components/AddPost.scss';
 </style>
 
 

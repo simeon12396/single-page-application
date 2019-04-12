@@ -1,1 +1,13 @@
-$color: red;
+@import './typography/typography.scss';
+@import './colors/colors.scss';
+@import './mixins/mixins.scss';
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
