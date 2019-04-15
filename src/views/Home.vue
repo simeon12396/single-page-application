@@ -21,7 +21,9 @@
               </v-card-title>
 
               <v-card-actions>
-                <v-btn to="/news" flat color="orange">View more</v-btn>
+                <v-btn flat color="orange" @click="loadSingularNews(index)">
+                  View more
+                </v-btn>
                 <v-btn flat color="orange">
                   <i class="fas fa-share-alt"></i>
                 </v-btn>
@@ -61,6 +63,11 @@ export default {
   },
   created() {
     this.$store.dispatch('fetchAllNews');
+  },
+  methods: {
+    loadSingularNews(newsKey) {
+      this.$router.push(`/news/${newsKey}`);
+    }
   } 
 };
 </script>
