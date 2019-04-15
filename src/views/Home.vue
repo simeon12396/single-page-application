@@ -9,14 +9,14 @@
       <v-flex class="flex-item">
         <h2>All about News</h2>
         <v-layout wrap class="flex-item__posts">
-          <v-flex v-for="(post, index) in getFetchAllPosts" :key='index'>
+          <v-flex v-for="(news, index) in getFetchAllNews" :key='index'>
             <v-card>
               <v-img src="https://media.steelseriescdn.com/thumbs/filer_public/79/38/793810c0-be38-4840-ab60-0657e7ecd973/purchase-gallery-650wl-top.png__1850x800_q100_crop-scale_optimize_subsampling-2.png" aspect-ratio="2.75"></v-img>
 
               <v-card-title primary-title>
                 <div>
-                  <h3 class="flex-item__posts-heading">{{post.title}}</h3>
-                  <div class="flex-item__posts-desc"> {{post.description}} </div>
+                  <h3 class="flex-item__posts-heading">{{news.title}}</h3>
+                  <div class="flex-item__posts-desc"> {{news.description}} </div>
                 </div>
               </v-card-title>
 
@@ -56,11 +56,11 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getFetchAllPosts'
+      'getFetchAllNews'
     ])
   },
   created() {
-    this.$store.dispatch('fetchAllPosts');
+    this.$store.dispatch('fetchAllNews');
   } 
 };
 </script>

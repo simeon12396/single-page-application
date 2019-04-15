@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      {{getPostStatus}}
+      {{getNewsStatus}}
       <v-text-field v-model="formData.title" name="title" label="Title" type="text"></v-text-field>
       <v-text-field v-model="formData.description" name="description" label="Description" type="text"></v-text-field>
       <wysiwyg v-model="formData.content"/>
@@ -9,7 +9,7 @@
       <div class="text-xs-center">
         <v-rating v-model="formData.rating"></v-rating>
       </div>
-      <v-btn type="submit" color="primary" @click="submitAddPost(formData)">
+      <v-btn type="submit" color="primary" @click="submitAddNews(formData)">
         <i class="material-icons">create</i>
       </v-btn>
       <h1 v-if="alertInfo">Your post was added</h1>
@@ -37,10 +37,10 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getPostStatus'
+      'getNewsStatus'
     ]),
     alertInfo() {
-      if(this.getPostStatus) {
+      if(this.getNewsStatus) {
         setTimeout(() => {
           this.clearPost();
         }, 3000);
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'submitAddPost'
+      'submitAddNews'
     ]),
     clearPost() {
       this.formData.title = '';
