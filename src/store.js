@@ -11,7 +11,8 @@ export default new Vuex.Store({
     user: null,
     isAuthenticated: false,
     newsStatus: false,
-    fetchAllNews: {}
+    fetchAllNews: {},
+    singularNews: null
   },
   plugins: [createPersistedState()],
   getters: {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     getFetchAllNews(state) {
       return state.fetchAllNews;
+    },
+    getSingularNews(state) {
+      return state.singularNews;
     }
   },
   mutations: {
@@ -40,6 +44,9 @@ export default new Vuex.Store({
     },
     setFetchAllNews(state, payload) {
       state.fetchAllNews = payload;
+    },
+    setFetchSingularNews(state, payload) {
+      state.singularNews = payload;
     }
   },
   actions: {
@@ -95,6 +102,12 @@ export default new Vuex.Store({
       .then((dataSnapshot) => {
         console.log(dataSnapshot.val());
         commit('setFetchAllNews', dataSnapshot.val());
+      })
+    },
+    fetchSingularNews({commit}, payload) {
+      firebase.database().ref(`news/${payload}`).once('value')
+      .then(dataSnapshot => {
+        commit('setFetchSingularNews', dataSnapshot.val());
       })
     }
   }

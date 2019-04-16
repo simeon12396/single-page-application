@@ -38,7 +38,7 @@ let router = new Router({
       component: News
     },
     {
-      name:'Singular News',
+      name:'SingularNews',
       path: '/news/:id',
       component: singularNews
     },

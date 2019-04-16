@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <app-navigation/>
-    <v-content transition="slide-x-transition">
-      <router-view></router-view>
+    <v-content>
+      <transition name="moveInUp">
+        <router-view/>
+      </transition>
     </v-content>
   </v-app>
 </template>
@@ -20,5 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/Main.scss';
+@import './styles/components/App.scss';
 </style>
 

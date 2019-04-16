@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     loadSingularNews(newsKey) {
+      this.$store.dispatch('fetchSingularNews', newsKey);
       this.$router.push(`/news/${newsKey}`);
     }
   } 
