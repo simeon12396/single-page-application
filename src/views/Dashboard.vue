@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-layout justify-center>
+    <v-layout justify-center class="first-flexbox">
       <v-flex>
         <v-btn color="info" to="/dashboard/add_post" @click="dashboardHideCnt">
           Add post
@@ -12,15 +12,16 @@
         </v-btn>
       </v-flex>
     </v-layout>
-    <v-layout justify-center class="secondFlex">
+
+    <v-layout>
       <v-flex>
         <router-view></router-view>
       </v-flex>
     </v-layout>
 
-    <v-layout class="thirdFlex" v-if="dashboardCntFlag">
+    <v-layout v-if="dashboardCntFlag" class="third-flexbox">
       <v-flex>
-        <v-img :src="dashboardImgSrc"/>
+        <v-img :src=dashboardImgSrc></v-img>
       </v-flex>
 
       <v-flex>
@@ -48,6 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/components/dashboard.scss";
+  @import "../styles/components/Dashboard.scss";
 </style>
 

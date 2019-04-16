@@ -10,19 +10,23 @@ export default new Vuex.Store({
   state:{
     user: null,
     isAuthenticated: false,
-    postStatus: false,
-    fetchAllPosts: {}
+    newsStatus: false,
+    fetchAllNews: {},
+    singularNews: null
   },
   plugins: [createPersistedState()],
   getters: {
     getIsAuthenticated(state) {
       return state.isAuthenticated;
     },
-    getPostStatus(state) {
-      return state.postStatus;
+    getNewsStatus(state) {
+      return state.newsStatus;
     },
-    getFetchAllPosts(state) {
-      return state.fetchAllPosts;
+    getFetchAllNews(state) {
+      return state.fetchAllNews;
+    },
+    getSingularNews(state) {
+      return state.singularNews;
     }
   },
   mutations: {
@@ -32,17 +36,17 @@ export default new Vuex.Store({
     setIsAuthenticated(state, payload) {
       state.isAuthenticated = payload;
     },
-    setClearPostStatus(state, payload) {
-      state.postStatus = payload;
+    setNewsStatus(state, payload) {
+      state.newsStatus = payload;
     },
-    setPostStatus(state, payload) {
-      state.postStatus = payload;
+    setResetNewsStatus(state, payload) {
+      state.newsStatus = payload;
     },
-    setResetPostStatus(state, payload) {
-      state.postStatus = payload;
+    setFetchAllNews(state, payload) {
+      state.fetchAllNews = payload;
     },
-    setFetchAllPosts(state, payload) {
-      state.fetchAllPosts = payload;
+    setFetchSingularNews(state, payload) {
+      state.singularNews = payload;
     }
   },
   actions: {
@@ -83,21 +87,27 @@ export default new Vuex.Store({
         router.push('/signup');
       })
     },
-    submitAddPost({commit}, payload) {
+    submitAddNews({commit}, payload) {
       firebase
       .database()
       .ref('news')
       .push( {...payload} );
-      commit('setPostStatus', true);
+      commit('setNewsStatus', true);
       setTimeout(() => {
-        commit('setResetPostStatus', false);
+        commit('setResetNewsStatus', false);
       }, 3000);
     },
-    fetchAllPosts({commit}) {
+    fetchAllNews({commit}) {
       firebase.database().ref('news').once('value')
       .then((dataSnapshot) => {
         console.log(dataSnapshot.val());
-        commit('setFetchAllPosts', dataSnapshot.val());
+        commit('setFetchAllNews', dataSnapshot.val());
+      })
+    },
+    fetchSingularNews({commit}, payload) {
+      firebase.database().ref(`news/${payload}`).once('value')
+      .then(dataSnapshot => {
+        commit('setFetchSingularNews', dataSnapshot.val());
       })
     }
   }
