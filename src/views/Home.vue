@@ -25,7 +25,7 @@
                   View more
                 </v-btn>
                 <v-btn flat color="orange">
-                  <i class="fas fa-share-alt"></i>
+                  Add to favorites
                 </v-btn>
               </v-card-actions>
            </v-card>

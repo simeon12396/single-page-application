@@ -8,9 +8,6 @@
       <v-btn flat to="/products">
         <span>Products</span>
       </v-btn>
-      <v-btn flat to="/news">
-        <span>News</span>
-      </v-btn>
       <v-btn flat to="/dashboard" v-if="getIsAuthenticated">
         <span>Dashboard</span>
       </v-btn>
