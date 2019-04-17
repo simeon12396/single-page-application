@@ -14,6 +14,7 @@
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
     "vue-wysiwyg": "^1.7.2",
+    "vue2-animate": "^2.1.0",
     "vuefire": "^1.4.5",
     "vuetify": "^1.5.5",
     "vuex": "^3.0.1",
