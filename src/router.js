@@ -5,11 +5,11 @@ import Products from './views/Products.vue';
 import SingularNews from './views/SingularNews.vue';
 import Dashboard from "./views/Dashboard.vue";
 import Favorites from "./views/Favorites.vue";
-import SignUp from "./views/SignUp.vue";
-import SignIn from "./views/SignIn.vue";
-import firebase from 'firebase';
+import SignUp from "./views/Signup.vue";
+import SignIn from "./views/Signin.vue";
+import firebase from "firebase";
 import AddPost from "./views/AddPost.vue";
-import NotFound404 from "./views/NotFound404.vue"
+import NotFound404 from "./views/NotFound404.vue";
 Vue.use(Router);
 
 let router = new Router({

@@ -15,10 +15,7 @@
 
     <v-layout>
       <v-flex>
-        <transition 
-          name="addPost-animation" 
-          enter-active-class="slideInLeft"
-        >
+        <transition name="addPost-animation" enter-active-class="slideInLeft">
           <router-view></router-view>
         </transition>
       </v-flex>
@@ -38,12 +35,13 @@
 
 <script>
 export default {
-  name: 'Dashboard',
+  name: "Dashboard",
   data() {
     return {
-      dashboardImgSrc:"https://publicdomainvectors.org/photos/addon_burning_music_cds.png",
+      dashboardImgSrc:
+        "https://publicdomainvectors.org/photos/addon_burning_music_cds.png",
       dashboardCntFlag: true
-    }
+    };
   },
   methods: {
     dashboardHideCnt() {
@@ -54,6 +52,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/components/Dashboard.scss";
+@import "../styles/components/dashboard.scss";
 </style>
-
