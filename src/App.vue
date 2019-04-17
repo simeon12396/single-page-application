@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './styles/Main.scss';
+@import './styles/main.scss';
 @import './styles/components/App.scss';
 </style>
 
