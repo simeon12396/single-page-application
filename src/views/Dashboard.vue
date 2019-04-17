@@ -15,7 +15,12 @@
 
     <v-layout>
       <v-flex>
-        <router-view></router-view>
+        <transition 
+          name="addPost-animation" 
+          enter-active-class="slideInLeft"
+        >
+          <router-view></router-view>
+        </transition>
       </v-flex>
     </v-layout>
 

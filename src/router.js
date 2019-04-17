@@ -3,7 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Products from './views/Products.vue';
 import News from './views/News.vue';
-import singularNews from './views/singularNews.vue';
+import SingularNews from './views/SingularNews.vue';
 import Dashboard from "./views/Dashboard.vue";
 import Favorites from "./views/Favorites.vue";
 import SignUp from "./views/SignUp.vue";
@@ -40,7 +40,7 @@ let router = new Router({
     {
       name:'SingularNews',
       path: '/news/:id',
-      component: singularNews
+      component: SingularNews
     },
     {
       name: 'Dashboard',
