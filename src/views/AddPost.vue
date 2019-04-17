@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-container>
-      {{getNewsStatus}}
       <v-text-field v-model="formData.title" name="title" label="Title" type="text"></v-text-field>
       <v-text-field v-model="formData.description" name="description" label="Description" type="text"></v-text-field>
       <wysiwyg v-model="formData.content"/>
