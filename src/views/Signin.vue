@@ -39,9 +39,7 @@ export default {
     /*
       submitSignInForm() { this.$store.dispatch('submitSignInForm', this.formData); } -> is equal to code below!
     */
-   ...mapActions([
-     'submitSignInForm'
-   ])
+   ...mapActions(['submitSignInForm'])
   }
 }
 </script>
