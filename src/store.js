@@ -1,8 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import firebase from 'firebase';
-import router from './router.js';
-import createPersistedState from 'vuex-persistedstate';
+import firebase from "firebase";
+import router from "./router.js";
+import createPersistedState from "vuex-persistedstate";
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -12,7 +13,9 @@ export default new Vuex.Store({
     isAuthenticated: false,
     newsStatus: false,
     fetchAllNews: {},
-    singularNews: null
+    singularNews: null,
+    retrieveAllnews: {},
+    image: null
   },
   plugins: [createPersistedState()],
   getters: {
@@ -27,6 +30,12 @@ export default new Vuex.Store({
     },
     getSingularNews(state) {
       return state.singularNews;
+    },
+    getRetrieveAllnews(state) {
+      return state.retrieveAllnews;
+    },
+    getImgUpload(state) {
+      return state.image;
     }
   },
   mutations: {
@@ -47,6 +56,15 @@ export default new Vuex.Store({
     },
     setFetchSingularNews(state, payload) {
       state.singularNews = payload;
+    },
+    setRetrieveAllNews(state, payload) {
+      state.retrieveAllnews = payload;
+    },
+    setImgUpload(state, payload) {
+      state.image = payload.secure_url;
+    },
+    setClearImgUpload(state) {
+      state.image = "";
     }
   },
   actions: {
@@ -95,7 +113,7 @@ export default new Vuex.Store({
       commit('setNewsStatus', true);
       setTimeout(() => {
         commit('setResetNewsStatus', false);
-      }, 3000);
+      }, 1500);
     },
     fetchAllNews({commit}) {
       firebase.database().ref('news').once('value')
@@ -108,6 +126,32 @@ export default new Vuex.Store({
       firebase.database().ref(`news/${payload}`).once('value')
       .then(dataSnapshot => {
         commit('setFetchSingularNews', dataSnapshot.val());
+      })
+    },
+    retrieveAllNews({commit}) {
+      firebase.database().ref('news').on('value', dataSnapshot => {
+        commit('setRetrieveAllNews', dataSnapshot.val());
+      })
+    },
+    deleteNews({commit}, payload) {
+      setTimeout(() => {
+        firebase.database().ref(`news/${payload}`).remove();
+      }, 1000);
+    },
+    imgUpload({commit}, payload) {
+      const cloudinary_url = "https://api.cloudinary.com/v1_1/dq6edue1z/image/upload";
+      const cloudinary_preset = "ulugwxnr";
+
+      let formData = new FormData();
+
+      formData.append('file', payload);
+      formData.append('upload_preset', cloudinary_preset);
+
+      axios.post(cloudinary_url, formData, {
+        'Content-type': 'application/x-www-form-urlencoded'
+      })
+      .then(response => {
+        commit('setImgUpload', response.data);
       })
     }
   }

@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-container>
-      <v-img
-        src="https://media.steelseriescdn.com/thumbs/filer_public/79/38/793810c0-be38-4840-ab60-0657e7ecd973/purchase-gallery-650wl-top.png__1850x800_q100_crop-scale_optimize_subsampling-2.png"
-      ></v-img>
+      <v-img :src="getSingularNews.image"></v-img>
+      
+      <v-img class="new-icon" src="http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png"></v-img>
 
       <div class="display-3">
         {{ getSingularNews.title }}
@@ -56,5 +56,21 @@ export default {
     font-style: italic;
     font-size: 1rem;
   }
+}
+
+.v-image {
+  height: 400px;
+}
+
+.container {
+  position: relative;
+}
+
+.new-icon {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 200px;
+  height: initial;
 }
 </style>

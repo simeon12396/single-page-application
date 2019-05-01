@@ -1,6 +1,8 @@
 <template>
   <div>
     <v-container>
+      <v-img v-if="getImgUpload" :src="getImgUpload"/>
+      <input type="file" name="File" ref="fileInput" @change="imgUpload"/>
       <v-text-field
         v-model="formData.title"
         name="title"
@@ -34,7 +36,6 @@
 <script>
 import { mapActions } from "vuex";
 import { mapGetters } from "vuex";
-import { setTimeout } from "timers";
 
 export default {
   name: "AddPost",
@@ -45,7 +46,8 @@ export default {
         description: "",
         content: "",
         rating: 2,
-        author: ""
+        author: "",
+        image: ""
       }
     };
   },
@@ -53,25 +55,40 @@ export default {
     ...mapGetters(["getNewsStatus"]),
     alertInfo() {
       if (this.getNewsStatus) {
-        // TODO: fix this
+
         setTimeout(() => {
           this.clearPost();
-        }, 3000);
+        }, 1500);
+
+        setTimeout(() => {
+          this.$store.commit('setClearImgUpload');
+        }, 1500);
 
         return true;
       }
 
       return false;
+    },
+    getImgUpload() {
+      const imgUploaded = this.$store.getters['getImgUpload'];
+      this.formData.image = imgUploaded;
+
+      return imgUploaded;
     }
   },
   methods: {
     ...mapActions(["submitAddNews"]),
     clearPost() {
+      this.$refs.fileInput.value = "";
       this.formData.title = "";
       this.formData.description = "";
       this.formData.content = "";
       this.formData.author = "";
       this.formData.rating = null;
+    },
+    imgUpload(event) {
+      let selectedFile = event.target.files[0];
+      this.$store.dispatch('imgUpload', selectedFile);
     }
   }
 };

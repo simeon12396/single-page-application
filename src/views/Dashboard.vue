@@ -7,7 +7,7 @@
         </v-btn>
       </v-flex>
       <v-flex>
-        <v-btn color="error" to="/dashboard/add_post" @click="dashboardHideCnt">
+        <v-btn color="error" to="/dashboard/manage_post" @click="dashboardHideCnt">
           Manage post
         </v-btn>
       </v-flex>
@@ -38,8 +38,7 @@ export default {
   name: "Dashboard",
   data() {
     return {
-      dashboardImgSrc:
-        "https://publicdomainvectors.org/photos/addon_burning_music_cds.png",
+      dashboardImgSrc:"https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_960_720.jpg",
       dashboardCntFlag: true
     };
   },
