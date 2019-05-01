@@ -16,10 +16,12 @@
             <v-flex v-for="(news, index) in getFetchAllNews" :key="index">
               <v-card>
                 <v-img
-                  src="https://media.steelseriescdn.com/thumbs/filer_public/79/38/793810c0-be38-4840-ab60-0657e7ecd973/purchase-gallery-650wl-top.png__1850x800_q100_crop-scale_optimize_subsampling-2.png"
-                  aspect-ratio="2.75"
+                  :src="news.image"
+                  height="212px"
                 ></v-img>
-
+                <v-img class="new-icon"
+                  src="http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png"
+                ></v-img>
                 <v-card-title primary-title>
                   <div>
                     <h3 class="flex-item__posts-heading">{{ news.title }}</h3>
@@ -63,14 +65,14 @@ export default {
   data() {
     return {
       slides: [
-        { src: require("../assets/images/steelseries1.png") },
-        { src: require("../assets/images/steelseries2.png") },
-        { src: require("../assets/images/steelseries3.png") }
+        { src: require("../assets/images/headset-arctis-pro.png") },
+        { src: require("../assets/images/mousepad-qck-limited.png") },
+        { src: require("../assets/images/mice-rival-650.png") }
       ]
     };
   },
   computed: {
-    ...mapGetters(["getFetchAllNews"])
+    ...mapGetters(["getFetchAllNews", "getImgUpload"])
   },
   created() {
     this.$store.dispatch("fetchAllNews");

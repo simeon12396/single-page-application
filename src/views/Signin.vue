@@ -11,6 +11,7 @@
               <v-text-field v-model="formData.email" prepend-icon="email" name="email" label="Email" type="email"></v-text-field>
               <v-text-field v-model="formData.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
               <v-card-actions>
+                <div class="caption">You don't have an account? You can <router-link to="/signup">create one</router-link></div>
                 <v-spacer></v-spacer>
                 <v-btn type="submit" color="primary" >Sign in</v-btn>
               </v-card-actions>

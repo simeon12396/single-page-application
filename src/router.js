@@ -9,6 +9,7 @@ import SignUp from "./views/Signup.vue";
 import SignIn from "./views/Signin.vue";
 import firebase from "firebase";
 import AddPost from "./views/AddPost.vue";
+import ManagePost from "./views/managePost.vue";
 import NotFound404 from "./views/NotFound404.vue";
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ let router = new Router({
           name: "AddPost",
           path: "add_post",
           component: AddPost
+        },
+        {
+          name: "ManagePost",
+          path: "manage_post",
+          component: ManagePost
         }
       ]
     },
