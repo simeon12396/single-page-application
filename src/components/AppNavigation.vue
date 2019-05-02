@@ -11,8 +11,8 @@
       <v-btn flat to="/dashboard" v-if="getIsAuthenticated">
         <span>Dashboard</span>
       </v-btn>
-      <v-btn flat to="/favorites" v-if="getIsAuthenticated">
-        <span>Favorites</span>
+      <v-btn flat to="/cart">
+        <span>Cart</span>
       </v-btn>
       <v-btn flat to="/signup" v-if="!getIsAuthenticated">
         <span>Sign Up</span>
