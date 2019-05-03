@@ -23,9 +23,9 @@
         type="text"
       ></v-text-field>
       <div class="text-xs-center">
-        <v-rating v-model="formData.rating"></v-rating>
+        <v-rating v-model="formData.rating" color="yellow"></v-rating>
       </div>
-      <v-btn type="submit" color="primary" @click="submitAddNews(formData)">
+      <v-btn type="submit" color="success" @click="submitAddNews(formData)">
         <i class="material-icons">create</i>
       </v-btn>
       <h1 v-if="alertInfo">Your post was added</h1>

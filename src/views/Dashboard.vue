@@ -3,12 +3,12 @@
     <v-layout justify-center class="first-flexbox">
       <v-flex>
         <v-btn color="info" to="/dashboard/add_post" @click="dashboardHideCnt">
-          Add post
+          Add News
         </v-btn>
       </v-flex>
       <v-flex>
         <v-btn color="error" to="/dashboard/manage_post" @click="dashboardHideCnt">
-          Manage post
+          Manage News
         </v-btn>
       </v-flex>
     </v-layout>

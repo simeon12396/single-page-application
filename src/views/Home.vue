@@ -32,10 +32,10 @@
                 </v-card-title>
 
                 <v-card-actions>
-                  <v-btn flat color="orange" @click="loadSingularNews(index)">
+                  <v-btn color="info" @click="loadSingularNews(index)">
                     View more
                   </v-btn>
-                  <v-btn flat color="orange">
+                  <v-btn color="info">
                     Add to favorite
                   </v-btn>
                 </v-card-actions>
@@ -87,5 +87,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/components/home.scss";
+  @import "../styles/components/home.scss";
+
+  .v-carousel__controls {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  }
 </style>

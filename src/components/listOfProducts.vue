@@ -5,8 +5,8 @@
         <v-img :src="product.image"/>
 
         <v-card-title>
-          <router-link to="">
-            <div class="title">{{ product.name }}</div>
+          <router-link to="/products/product_details">
+            <div class="title" @click="currentProduct(product)">{{ product.name }}</div>
           </router-link>
 
           <v-layout class="product-price">
@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn block color="info">Add to cart </v-btn>
+          <v-btn block color="success" @click="addProduct(product)">Add to cart </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -28,8 +28,16 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  props: ['products']
+  props: ['products'],
+  methods: {
+    ...mapActions([
+      'currentProduct',
+      'addProduct'
+    ])
+  }
 }
 
 </script>

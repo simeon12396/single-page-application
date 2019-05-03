@@ -16,7 +16,7 @@
       <div class="subheading mt-4" v-html="getSingularNews.content"></div>
 
       <div class="text-xs-center">
-        <v-rating v-model="getSingularNews.rating"></v-rating>
+        <v-rating v-model="getSingularNews.rating" color="yellow"></v-rating>
       </div>
 
       <div class="caption mt-4">

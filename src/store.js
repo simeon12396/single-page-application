@@ -16,6 +16,8 @@ export default new Vuex.Store({
     singularNews: null,
     retrieveAllnews: {},
     image: null,
+    currentProduct:null,
+    cartProducts: [],
     notebooks: [
       {
         name: 'Notebook Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
@@ -131,6 +133,12 @@ export default new Vuex.Store({
     },
     getAllProducts(state) {
       return state.notebooks.concat(state.smartphones);
+    },
+    getCurrentProduct(state) {
+      return state.currentProduct;
+    },
+    getCartProducts(state) {
+      return state.cartProducts;
     }
   },
   mutations: {
@@ -160,6 +168,12 @@ export default new Vuex.Store({
     },
     setClearImgUpload(state) {
       state.image = "";
+    },
+    setCurrentProduct(state, payload) {
+      state.currentProduct = payload;
+    },
+    setAddProduct(state, payload) {
+      state.cartProducts.push(payload);
     }
   },
   actions: {
@@ -248,6 +262,12 @@ export default new Vuex.Store({
       .then(response => {
         commit('setImgUpload', response.data);
       })
+    },
+    currentProduct({commit}, payload) {
+      commit('setCurrentProduct', payload);
+    },
+    addProduct({commit}, payload) {
+      commit('setAddProduct', payload);
     }
   }
 });

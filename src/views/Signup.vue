@@ -3,7 +3,7 @@
     <v-layout justify-center align-center>
       <v-flex xs12 sm8 md4>
        <v-card class="elevation-12">
-          <v-toolbar dark color="primary">
+          <v-toolbar dark>
             <v-toolbar-title>Sign up</v-toolbar-title>
           </v-toolbar>  
           <v-card-text>
@@ -13,7 +13,7 @@
               <v-text-field v-model="formData.password" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn type="submit" color="primary">Sign up</v-btn>
+                <v-btn type="submit" dark>Sign up</v-btn>
               </v-card-actions>
             </v-form>
           </v-card-text>
@@ -47,6 +47,12 @@ export default {
 </script>
 
 <style scoped>
+  .v-toolbar {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  }
 
+  .v-btn {
+    background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  }
 </style>
 

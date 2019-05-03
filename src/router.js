@@ -12,6 +12,7 @@ import AddPost from "./views/AddPost.vue";
 import ManagePost from "./views/managePost.vue";
 import NotFound404 from "./views/NotFound404.vue";
 import Cart from "./views/Cart.vue";
+import productDetails from "./views/productDetails.vue";
 
 Vue.use(Router);
 
@@ -37,9 +38,14 @@ let router = new Router({
         {
           name: "AllProducts",
           path: "all_products",
-          component: allProducts
+          component: allProducts,
         }
       ]
+    },
+    {
+      name: "ProductDetails",
+      path: "/products/product_details",
+      component: productDetails
     },
     {
       name: "SingularNews",
