@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar dark color="rgba(0,0,0,0.5)">
+  <v-toolbar dark>
     <v-toolbar-title>
       <v-btn flat to="/"> {{ toolbarTitle }} </v-btn>
     </v-toolbar-title>
@@ -11,8 +11,10 @@
       <v-btn flat to="/dashboard" v-if="getIsAuthenticated">
         <span>Dashboard</span>
       </v-btn>
-      <v-btn flat to="/favorites" v-if="getIsAuthenticated">
-        <span>Favorites</span>
+      <v-btn color="info" to="/cart">
+        <span>Cart 
+          <v-icon size="1.3rem" color="white">fas fa-shopping-cart</v-icon>
+        </span>
       </v-btn>
       <v-btn flat to="/signup" v-if="!getIsAuthenticated">
         <span>Sign Up</span>
@@ -53,4 +55,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+  .v-toolbar {
+    background-image: linear-gradient(15deg, #80d0c7 0%, #13547a 100%);
+  }
+</style>
+

@@ -2,15 +2,18 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Products from "./views/Products.vue";
+import allProducts from "./views/allProducts.vue";
 import SingularNews from "./views/singularNews";
 import Dashboard from "./views/Dashboard.vue";
-import Favorites from "./views/Favorites.vue";
 import SignUp from "./views/Signup.vue";
 import SignIn from "./views/Signin.vue";
 import firebase from "firebase";
 import AddPost from "./views/AddPost.vue";
 import ManagePost from "./views/managePost.vue";
 import NotFound404 from "./views/NotFound404.vue";
+import Cart from "./views/Cart.vue";
+import productDetails from "./views/productDetails.vue";
+
 Vue.use(Router);
 
 let router = new Router({
@@ -30,7 +33,19 @@ let router = new Router({
     {
       name: "Products",
       path: "/products",
-      component: Products
+      component: Products,
+      children: [
+        {
+          name: "AllProducts",
+          path: "all_products",
+          component: allProducts,
+        }
+      ]
+    },
+    {
+      name: "ProductDetails",
+      path: "/products/product_details",
+      component: productDetails
     },
     {
       name: "SingularNews",
@@ -58,14 +73,6 @@ let router = new Router({
       ]
     },
     {
-      name: "Favorites",
-      path: "/favorites",
-      component: Favorites,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
       name: "SignUp",
       path: "/signup",
       component: SignUp,
@@ -80,6 +87,11 @@ let router = new Router({
       meta: {
         requiresGuest: true
       }
+    },
+    {
+      name: "Cart",
+      path: "/cart",
+      component: Cart
     }
   ]
 });
