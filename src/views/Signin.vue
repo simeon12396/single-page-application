@@ -3,7 +3,7 @@
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
        <v-card class="elevation-12">
-          <v-toolbar dark>
+          <v-toolbar dark color="#2196f3">
             <v-toolbar-title>Sign in</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
@@ -13,7 +13,7 @@
               <v-card-actions>
                 <div class="caption">You don't have an account? You can <router-link to="/signup">create one</router-link></div>
                 <v-spacer></v-spacer>
-                <v-btn type="submit" dark>Sign in</v-btn>
+                <v-btn type="submit" dark color="#2196f3">Sign in</v-btn>
               </v-card-actions>
             </v-form>
           </v-card-text>
@@ -46,10 +46,6 @@ export default {
 </script>
 
 <style scoped>
-  .v-toolbar,
-  .v-btn {
-    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  }
 
 </style>
 

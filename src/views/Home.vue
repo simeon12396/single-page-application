@@ -18,6 +18,7 @@
                 <v-img
                   :src="news.image"
                   height="212px"
+                  class="news-image"
                 ></v-img>
                 <v-img class="new-icon"
                   src="http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png"
@@ -89,7 +90,11 @@ export default {
 <style lang="scss">
   @import "../styles/components/home.scss";
 
-  .v-carousel__controls {
-    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  .v-card:hover .news-image {
+    transform: scale(1.2);
+  }
+
+  .news-image {
+    transition: all .2s linear;
   }
 </style>
