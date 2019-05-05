@@ -23,15 +23,21 @@
           <i class="far fa-trash-alt"></i>
         </v-btn>
       </span>
+
+      <go-top :size=50 bg-color="#2196f3 "></go-top>
     </div>
   </v-container>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: 'Cart',
+  components: {
+    GoTop
+  },
   data() {
     return {
       countProducts: null

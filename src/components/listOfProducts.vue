@@ -23,15 +23,21 @@
           <v-btn block color="success" @click="setAddProduct(product)">Add to cart </v-btn>
         </v-card-actions>
       </v-card>
+
+      <go-top :size=50 bg-color="#2196f3 "></go-top>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   props: ['products'],
+  components: {
+    GoTop
+  },
   methods: {
     ...mapMutations([
       'setCurrentProduct',
