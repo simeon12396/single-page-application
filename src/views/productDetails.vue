@@ -9,14 +9,14 @@
     <v-flex>
       <div class="title mb-4 flex-item">{{getCurrentProduct.name}}</div>
       <div class="display-1 mb-2 flex-item">R$ {{getCurrentProduct.price}},00</div>
-      <v-btn block color="success flex-item" @click="addProduct(getCurrentProduct)">Add to cart </v-btn>
+      <v-btn block color="success flex-item" @click="setAddProduct(getCurrentProduct)">Add to cart </v-btn>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { mapActions } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   data() {
     return {
@@ -29,8 +29,8 @@ export default {
     ])
   },
   methods: {
-    ...mapActions([
-      'addProduct'
+    ...mapMutations([
+      'setAddProduct'
     ])
   }
 }

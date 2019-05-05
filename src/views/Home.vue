@@ -54,15 +54,20 @@
           voluptatem alias repudiandae inventore?
         </v-flex>
       </v-layout>
+      <go-top :size=50 bg-color="#2196f3 "></go-top>
     </v-container>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: "Home",
+  components: {
+    GoTop
+  },
   data() {
     return {
       slides: [

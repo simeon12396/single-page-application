@@ -7,3 +7,9 @@
 @mixin border-radius($radius: 1rem) {
   border-radius: $radius;
 }
+
+@mixin flexbox-center( $display-flex: flex, $justify-center: center, $align-items: center) {
+  display: $display-flex;
+  justify-content: $justify-center;
+  align-items: $align-items;
+}

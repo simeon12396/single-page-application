@@ -24,6 +24,8 @@
             <i class="far fa-trash-alt"></i>
           </v-btn>
         </v-flex>
+
+        <go-top :size=40 bg-color="#2196f3 "></go-top>
       </v-layout>
     </v-card>
   </v-container>
@@ -31,9 +33,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: 'ManagePost',
+  components: {
+    GoTop
+  },
   data() {
     return {
 
@@ -69,6 +75,7 @@ export default {
   }
 
   .flex:last-of-type {
+    flex: 0 1 20%;
     display: flex;
     flex-direction: column;
     justify-content: fle;

@@ -137,7 +137,7 @@ export default new Vuex.Store({
     getCurrentProduct(state) {
       return state.currentProduct;
     },
-    getCartProducts(state) {
+    getProductsInCart(state) {
       return state.cartProducts;
     }
   },
@@ -174,6 +174,9 @@ export default new Vuex.Store({
     },
     setAddProduct(state, payload) {
       state.cartProducts.push(payload);
+    },
+    setDeleteProduct(state, payload) {
+      state.cartProducts.splice(payload, 1);
     }
   },
   actions: {
@@ -263,11 +266,14 @@ export default new Vuex.Store({
         commit('setImgUpload', response.data);
       })
     },
-    currentProduct({commit}, payload) {
+    /*currentProduct({commit}, payload) {
       commit('setCurrentProduct', payload);
     },
     addProduct({commit}, payload) {
       commit('setAddProduct', payload);
-    }
+    },
+    deleteProduct({commit}, payload) {
+      commit('setDeleteProduct', payload);
+    }*/
   }
 });
