@@ -1,8 +1,8 @@
 <template>
-  <v-layout wrap class="wrapper-flex">
+  <v-layout wrap class="wrapper-flex" justify-center="">
     <v-flex v-for="(product, index) in products" :key="index">
       <v-card>
-        <v-img :src="product.image"/>
+        <v-img :src="product.image" class="product-image"/>
 
         <v-card-title>
           <router-link to="/products/product_details">
@@ -39,34 +39,38 @@ export default {
     ])
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
   .v-card {
     width: 300px;
   }
-
-  .product-price {
-    margin-top: 1rem;
-    justify-content: space-between;
-
-    .last-product-item {
-    display: flex;
-    justify-content: flex-end;
-  }
-  }
   
   .wrapper-flex {
     padding-top: 1rem;
 
     .flex {
+      flex: 0 1 30%;
       margin-bottom: 1rem;
     }
 
     a {
       text-decoration: none;
       color: black;
+    }
+  }
+
+  .product-price {
+    margin-top: 1rem;
+    justify-content: space-between;
+
+    .flex {
+      flex: 0 1 50%;
+    }
+    
+    .last-product-item {
+      display: flex;
+      justify-content: flex-end;
     }
   }
   

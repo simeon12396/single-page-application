@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar dark>
+  <v-toolbar dark color="rgba(0,0,0,0.5)">
     <v-toolbar-title>
       <v-btn flat to="/"> {{ toolbarTitle }} </v-btn>
     </v-toolbar-title>
@@ -56,8 +56,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .v-toolbar {
-    background-image: linear-gradient(15deg, #80d0c7 0%, #13547a 100%);
-  }
+
 </style>
 
