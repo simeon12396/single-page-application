@@ -12,9 +12,14 @@
         <span>Dashboard</span>
       </v-btn>
       <v-btn color="info" to="/cart">
-        <span>Cart 
-          <v-icon size="1.3rem" color="white">fas fa-shopping-cart</v-icon>
-        </span>
+        <v-badge right>
+          <template v-slot:badge>
+            <span>{{getProductsInCart.length}}</span>
+          </template>
+          <v-icon large color="white" class="shopping_cart">
+            shopping_cart
+          </v-icon>
+        </v-badge>
       </v-btn>
       <v-btn flat to="/signup" v-if="!getIsAuthenticated">
         <span>Sign Up</span>
@@ -44,7 +49,7 @@ export default {
     /*
       getIsAuthenticated() { return this.$store.getters['getIsAuthenticated']; } -> -> is equal to code below!
     */
-    ...mapGetters(["getIsAuthenticated"])
+    ...mapGetters(["getIsAuthenticated", "getProductsInCart"])
   },
   methods: {
     /*

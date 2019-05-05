@@ -6,7 +6,7 @@
 
         <v-card-title>
           <router-link to="/products/product_details">
-            <div class="title" @click="currentProduct(product)">{{ product.name }}</div>
+            <div class="title" @click="setCurrentProduct(product)">{{ product.name }}</div>
           </router-link>
 
           <v-layout class="product-price">
@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn block color="success" @click="addProduct(product)">Add to cart </v-btn>
+          <v-btn block color="success" @click="setAddProduct(product)">Add to cart </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -28,23 +28,21 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
   props: ['products'],
   methods: {
-    ...mapActions([
-      'currentProduct',
-      'addProduct'
+    ...mapMutations([
+      'setCurrentProduct',
+      'setAddProduct'
     ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .v-card {
-    width: 300px;
-  }
+  .v-card { width: 300px; border: 1px solid #ddd; padding: 1rem; }
   
   .wrapper-flex {
     padding-top: 1rem;
@@ -60,8 +58,14 @@ export default {
     }
   }
 
-  .product-price {
-    margin-top: 1rem;
+  .product-image { width: 60%; margin: 0 auto }; 
+
+  .v-card:hover .product-image { transform: scale(1.2); }
+
+  .product-image { transition: transform .2s linear }; 
+
+  .product-price { 
+    margin-top: 1rem; 
     justify-content: space-between;
 
     .flex {
