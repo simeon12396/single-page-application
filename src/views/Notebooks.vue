@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <listOfProducts :products="getAllProducts" />
-  </div>
+  <listOfProducts :products="getAllNotebooks" />
 </template>
 
 <script>
@@ -9,13 +7,13 @@ import listOfProducts from "../components/listOfProducts.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: 'AllProducts',
+  name: 'Notebooks',
   components: {
     listOfProducts
   },
   computed: {
     ...mapGetters([
-      'getAllProducts'
+      'getAllNotebooks'
     ])
   }
 }

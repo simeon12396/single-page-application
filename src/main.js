@@ -5,9 +5,11 @@ import router from "./router";
 import store from "./store";
 import firebase from 'firebase';
 import wysiwyg from "vue-wysiwyg";
+import vuelidate from "vuelidate";
 
 Vue.config.productionTip = false;
 Vue.use(wysiwyg, {});
+Vue.use(vuelidate);
 
 let app = '';
 

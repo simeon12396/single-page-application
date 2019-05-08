@@ -9,23 +9,35 @@
     </div>
 
     <div class="table-descriptions" v-for="(product, index) in getProductsInCart" :key="index">
-      <span class="td">
-        <v-img :src="product.image"></v-img>
-      </span>
-      <span class="td">
-        <div class="title mb-2">{{product.name}}</div>
-        <div class="body-1">{{product.details}}</div>
-      </span>
-      <span class="td">5</span>
-      <span class="td">{{product.price}}</span>
+      <router-link to="/products/product_details">
+        <span class="td" @click="setCurrentProduct(product)">
+          <v-img :src="product.image"></v-img>
+        </span>
+        {{product.quantity}}
+       </router-link> 
+      <router-link to="/products/product_details">
+        <span class="td" @click="setCurrentProduct(product)">
+          <div class="title mb-2"> {{product.name}} </div>
+          <div class="body-1"> {{product.details}} </div>
+        </span>
+      </router-link> 
+      <span class="td"> 1 </span>
+      <span class="td">$ {{product.price}} </span>
       <span class="td">
         <v-btn flat mx-0 my-0 @click="setDeleteProduct(index)">
           <i class="far fa-trash-alt"></i>
         </v-btn>
       </span>
-
-      <go-top :size=50 bg-color="#2196f3 "></go-top>
     </div>
+
+    <div class="table-footer mt-2">
+      <span class="tf">Total Price <p>$ {{totaPrice}}</p></span>
+      <span class="tf">
+        <v-btn color="success checkout">Checkout</v-btn>
+      </span>
+    </div>
+
+    <go-top :size=50 bg-color="#2196f3 "></go-top>
   </v-container>
 </template>
 
@@ -46,11 +58,15 @@ export default {
   computed: {
     ...mapGetters([
       'getProductsInCart'
-    ])
+    ]),
+    totaPrice() {
+      return this.getProductsInCart.reduce((current, next) => current + next.price, 0);
+    }
   },
   methods: {
     ...mapMutations([
-      'setDeleteProduct'
+      'setDeleteProduct',
+      'setCurrentProduct'
     ])
   }
 }
@@ -59,6 +75,8 @@ export default {
 
 <style lang="scss" scoped>
   .container { @include flexbox-center(); width: 70vw; flex-direction: column;}
+
+  a { text-decoration: none; color: black; }
 
   .table-headings {
     font-weight: 500;
@@ -103,13 +121,25 @@ export default {
 
   .td:nth-child(5) { grid-area: remove; text-align: center; @include flexbox-center();}
 
-  .table-descriptions:hover{
-    background: #f5f5f5;
-    cursor: pointer;
+  .table-descriptions:hover{ background: #f5f5f5; cursor: pointer; }
+
+  .fa-trash-alt{ font-size: 1.7rem; color: #ff5252; }
+
+  .table-footer {
+    display: grid;
+    grid-template-columns: 100px 450px 100px 100px 100px;
+    grid-gap: 1rem;
   }
 
-  .fa-trash-alt{
-    font-size: 1.7rem;
-    color: #ff5252;
+  .table-footer { 
+    font-weight: 500;
+    
+    span:nth-child(1) { grid-column: 4/5; text-align: center; }
+
+    span:nth-child(2) {
+      grid-column: 5/-1;
+
+      .v-btn { margin-left: 0; margin-right: 0; }
+    }
   }
 </style>

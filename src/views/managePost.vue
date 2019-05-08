@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     deleteNews(key) {
-      console.log('success');
       this.$store.dispatch("deleteNews", key);
     }
   }
@@ -61,18 +60,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .fa-trash-alt {
-    font-size: 1.7rem;
-    color: #ff5252;
-  }
+  .fa-trash-alt { font-size: 1.7rem; color: #ff5252; }
 
-  .v-card {
-    border-left: 3px solid #2196f3 ;
-  }
+  .v-card { border-left: 3px solid #2196f3; }
 
-  .flex {
-    flex: 0 1 25%;
-  }
+  .flex { flex: 0 1 25%; }
 
   .flex:last-of-type {
     flex: 0 1 20%;

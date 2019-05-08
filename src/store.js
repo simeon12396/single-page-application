@@ -18,9 +18,9 @@ export default new Vuex.Store({
     image: null,
     currentProduct:null,
     cartProducts: [],
-    notebooks: [
+    allNotebooks: [
       {
-        name: 'Notebook Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
+        name: 'Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
         price: 2259,
         image: 'https://images-americanas.b2w.io/produtos/01/00/item/132381/3/132381386G1.png',
         stars: 5,
@@ -60,7 +60,7 @@ export default new Vuex.Store({
         details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
       },
     ],
-    smartphones: [
+    allSmartphones: [
       {
         name: 'Smartphone Xiaomi Mi A1 dual Android one 7.1',
         price: 1199,
@@ -132,7 +132,13 @@ export default new Vuex.Store({
       return state.image;
     },
     getAllProducts(state) {
-      return state.notebooks.concat(state.smartphones);
+      return state.allNotebooks.concat(state.allSmartphones);
+    },
+    getAllSmartphones(state) {
+      return state.allSmartphones;
+    },
+    getAllNotebooks(state) {
+      return state.allNotebooks;
     },
     getCurrentProduct(state) {
       return state.currentProduct;

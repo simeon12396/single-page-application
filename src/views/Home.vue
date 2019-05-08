@@ -1,10 +1,11 @@
 <template>
   <div>
-    <v-carousel>
+    <v-carousel router>
       <v-carousel-item 
         v-for="(slide, index) in slides"
         :key="index"
         :src="slide.src"
+        :to="slide.route"
       ></v-carousel-item>
     </v-carousel>
 
@@ -71,9 +72,10 @@ export default {
   data() {
     return {
       slides: [
-        { src: require("../assets/images/headset-arctis-pro.png") },
-        { src: require("../assets/images/mousepad-qck-limited.png") },
-        { src: require("../assets/images/mice-rival-650.png") }
+        { src: require("../assets/images/headset-arctis-pro.png"), route: "/news/-Ldeap0vDq8Tg6CBj4at" },
+        { src: require("../assets/images/mousepad-qck-limited.png"), route: "/news/-LdebJ8F1kGGYugHhOxx" },
+        { src: require("../assets/images/mice-rival-650.png"), route: "/news/-Ldebdgjs99W5LykxadF" },
+        { src: require("../assets/images/headset-arctis-5.png"), route: "/news/-LdecExfOxgkaA2qN72j" }
       ]
     };
   },
@@ -95,11 +97,7 @@ export default {
 <style lang="scss">
   @import "../styles/components/home.scss";
 
-  .v-card:hover .news-image {
-    transform: scale(1.2);
-  }
+  .v-card:hover .news-image { transform: scale(1.2); }
 
-  .news-image {
-    transition: all .2s linear;
-  }
+  .news-image { transition: all .2s linear; }
 </style>

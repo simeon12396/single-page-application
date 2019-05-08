@@ -41,36 +41,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.display-3,
-.headline {
-  text-align: center;
-}
-.caption {
-  font-family: $subheading-font-family;
-  font-weight: 900;
-  text-align: right;
-  padding-right: 2.2rem;
+  .display-3,
+  .headline { text-align: center; }
 
-  span {
-    color: grey;
-    font-style: italic;
-    font-size: 1rem;
+  .caption {
+    font-family: $subheading-font-family;
+    font-weight: 900;
+    text-align: right;
+    padding-right: 2.2rem;
+
+    span {
+      color: grey;
+      font-style: italic;
+      font-size: 1rem;
+    }
+}
+
+  .v-image { height: 400px; }
+
+  .container { position: relative; }
+
+  .new-icon {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    height: initial;
   }
-}
-
-.v-image {
-  height: 400px;
-}
-
-.container {
-  position: relative;
-}
-
-.new-icon {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  width: 200px;
-  height: initial;
-}
 </style>

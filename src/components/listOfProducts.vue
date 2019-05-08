@@ -53,15 +53,9 @@ export default {
   .wrapper-flex {
     padding-top: 1rem;
 
-    .flex {
-      flex: 0 1 30%;
-      margin-bottom: 1rem;
-    }
+    .flex { flex: 0 1 30%; margin-bottom: 1rem; }
 
-    a {
-      text-decoration: none;
-      color: black;
-    }
+    a { text-decoration: none; color: black; }
   }
 
   .product-image { width: 60%; margin: 0 auto }; 
@@ -74,14 +68,9 @@ export default {
     margin-top: 1rem; 
     justify-content: space-between;
 
-    .flex {
-      flex: 0 1 50%;
-    }
+    .flex { flex: 0 1 50%; }
     
-    .last-product-item {
-      display: flex;
-      justify-content: flex-end;
-    }
+    .last-product-item { display: flex; justify-content: flex-end; }
   }
   
 </style>
