@@ -1,44 +1,55 @@
 <template>
   <div>
     <v-container>
+      
       <v-img v-if="getImgUpload" :src="getImgUpload"/>
+
       <input type="file" name="File" ref="fileInput" @change="imgUpload"/>
-      <v-text-field
-        v-model="formData.title"
-        name="title"
-        label="Title"
-        type="text"
-      ></v-text-field>
-      <v-text-field
-        v-model="formData.description"
-        name="description"
-        label="Description"
-        type="text"
-      ></v-text-field>
+
+      <v-text-field v-model="formData.title" name="title" label="Title" type="text" @blur="$v.formData.title.$touch()"></v-text-field>
+
+      <v-alert transition="moveInUp" :value="$v.formData.title.$error" type="error">
+        This title is required.
+      </v-alert>
+
+      <v-text-field v-model="formData.description" name="description" label="Description" type="text"></v-text-field>
+
       <wysiwyg v-model="formData.content"></wysiwyg>
-      <v-text-field
-        v-model="formData.author"
-        name="author"
-        label="Author"
-        type="text"
-      ></v-text-field>
+
+      <v-text-field v-model="formData.author" name="author" label="Author" type="text" @blur="$v.formData.author.$touch()"></v-text-field>
+
+      <v-alert transition="moveInUp" :value="$v.formData.author.$error" type="error">
+        This author is required. The min length is 8 characters!
+      </v-alert>
+        
       <div class="text-xs-center">
         <v-rating v-model="formData.rating" color="yellow"></v-rating>
       </div>
+
       <v-btn type="submit" color="success" @click="submitAddNews(formData)">
         <i class="material-icons">create</i>
       </v-btn>
-      <h1 v-if="alertInfo">Your post was added</h1>
+      
+      <v-alert :value="submitFlag" type="error" dismissible transition="moveInUp">Something is wrong. Please, fill correct the form!</v-alert>
+
+      <v-alert type="success" :value="alertInfo">Your post was added!</v-alert>
+
+      <go-top :size=50 bg-color="#2196f3 "></go-top>
     </v-container>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 import { mapGetters } from "vuex";
+import { required, minLength } from "vuelidate/lib/validators";
+import { setTimeout } from 'timers';
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: "AddPost",
+  components: {
+    GoTop
+  },
   data() {
     return {
       formData: {
@@ -48,8 +59,20 @@ export default {
         rating: 2,
         author: "",
         image: ""
+      },
+      submitFlag: false
+    }
+  },
+  validations: {
+    formData: {
+      title: {
+        required
+      },
+      author: {
+        required,
+        minLength: minLength(8)
       }
-    };
+    }
   },
   computed: {
     ...mapGetters(["getNewsStatus"]),
@@ -77,7 +100,17 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["submitAddNews"]),
+    submitAddNews(formData){
+      if(!this.$v.$invalid) {
+        this.$store.dispatch('submitAddNews', formData);
+      } else{
+        this.submitFlag= true;
+
+        setTimeout(() => {
+          this.submitFlag = false;
+        }, 2500)
+      }
+    },
     clearPost() {
       this.$refs.fileInput.value = "";
       this.formData.title = "";
@@ -95,6 +128,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~vue-wysiwyg/dist/vueWysiwyg.css";
-@import "../styles/components/addPost.scss";
+  @import "~vue-wysiwyg/dist/vueWysiwyg.css";
+  @import "../styles/components/addPost.scss";
+  @import '../styles/components/App.scss';
 </style>

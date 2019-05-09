@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Products from "./views/Products.vue";
 import allProducts from "./views/allProducts.vue";
+import Smartphones from "./views/Smartphones.vue";
 import SingularNews from "./views/singularNews";
 import Dashboard from "./views/Dashboard.vue";
 import SignUp from "./views/Signup.vue";
@@ -13,6 +13,7 @@ import ManagePost from "./views/managePost.vue";
 import NotFound404 from "./views/NotFound404.vue";
 import Cart from "./views/Cart.vue";
 import productDetails from "./views/productDetails.vue";
+import Notebooks from "./views/Notebooks.vue";
 
 Vue.use(Router);
 
@@ -31,21 +32,24 @@ let router = new Router({
       component: Home
     },
     {
-      name: "Products",
-      path: "/products",
-      component: Products,
-      children: [
-        {
-          name: "AllProducts",
-          path: "all_products",
-          component: allProducts,
-        }
-      ]
+      name: "AllProducts",
+      path: "/products/all_products",
+      component: allProducts,
+    },
+    {
+      name: "Smartphones",
+      path: "/products/smartphones",
+      component: Smartphones
     },
     {
       name: "ProductDetails",
       path: "/products/product_details",
       component: productDetails
+    },
+    {
+      name: "Notebooks",
+      path: "/products/notebooks",
+      component: Notebooks
     },
     {
       name: "SingularNews",

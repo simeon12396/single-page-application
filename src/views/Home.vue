@@ -1,28 +1,27 @@
 <template>
   <div>
-    <v-carousel>
+    <v-carousel router>
       <v-carousel-item 
         v-for="(slide, index) in slides"
         :key="index"
         :src="slide.src"
+        :to="slide.route"
       ></v-carousel-item>
     </v-carousel>
 
     <v-container fluid>
       <v-layout>
         <v-flex class="flex-item">
+
           <h2>All about News</h2>
+
           <v-layout wrap class="flex-item__posts">
             <v-flex v-for="(news, index) in getFetchAllNews" :key="index">
+
               <v-card>
-                <v-img
-                  :src="news.image"
-                  height="212px"
-                  class="news-image"
-                ></v-img>
-                <v-img class="new-icon"
-                  src="http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png"
-                ></v-img>
+                <v-img :src="news.image" height="212px" class="news-image"></v-img>
+
+                <v-img class="new-icon" :src="comingSoonIcon"></v-img>
                 <v-card-title primary-title>
                   <div>
                     <h3 class="flex-item__posts-heading">{{ news.title }}</h3>
@@ -70,12 +69,12 @@ export default {
   },
   data() {
     return {
+      comingSoonIcon: 'http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png',
       slides: [
-        { src: require("../assets/images/headset-arctis-pro.png") },
-        { src: require("../assets/images/mousepad-qck-limited.png") },
-        { src: require("../assets/images/mice-rival-650.png") }
+        { src: require("../assets/images/notebook-1.jpg") },
+        { src: require("../assets/images/notebook-2.jpg") }
       ]
-    };
+    }
   },
   computed: {
     ...mapGetters(["getFetchAllNews", "getImgUpload"])
@@ -95,11 +94,9 @@ export default {
 <style lang="scss">
   @import "../styles/components/home.scss";
 
-  .v-card:hover .news-image {
-    transform: scale(1.2);
-  }
+  .v-card:hover .news-image { transform: scale(1.2); }
 
-  .news-image {
-    transition: all .2s linear;
-  }
+  .news-image { transition: all .2s linear; }
+
+  .v-window-item { background: white; }
 </style>

@@ -20,8 +20,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import './styles/main.scss';
 @import './styles/components/App.scss';
+
+.v-content__wrap { background: white; }
 </style>
 

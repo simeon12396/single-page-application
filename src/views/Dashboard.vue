@@ -6,13 +6,14 @@
           Add News
         </v-btn>
       </v-flex>
+
       <v-flex>
         <v-btn color="error" to="/dashboard/manage_post" @click="dashboardHideCnt">
           Manage News
         </v-btn>
       </v-flex>
     </v-layout>
-
+    
     <v-layout>
       <v-flex>
         <transition name="addPost-animation" enter-active-class="slideInLeft">
@@ -34,22 +35,27 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: "Dashboard",
   data() {
     return {
-      dashboardImgSrc:"https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_960_720.jpg",
+      dashboardImgSrc: require("../assets/images/coffe.jpg"),
       dashboardCntFlag: true
     };
   },
   methods: {
     dashboardHideCnt() {
       this.dashboardCntFlag = false;
-    }
+    },
+    ...mapMutations([
+      'setResetProducts'
+    ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/components/dashboard.scss";
+  @import "../styles/components/dashboard.scss";
 </style>
