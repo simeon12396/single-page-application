@@ -12,18 +12,16 @@
     <v-container fluid>
       <v-layout>
         <v-flex class="flex-item">
+
           <h2>All about News</h2>
+
           <v-layout wrap class="flex-item__posts">
             <v-flex v-for="(news, index) in getFetchAllNews" :key="index">
+
               <v-card>
-                <v-img
-                  :src="news.image"
-                  height="212px"
-                  class="news-image"
-                ></v-img>
-                <v-img class="new-icon"
-                  src="http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png"
-                ></v-img>
+                <v-img :src="news.image" height="212px" class="news-image"></v-img>
+
+                <v-img class="new-icon" :src="comingSoonIcon"></v-img>
                 <v-card-title primary-title>
                   <div>
                     <h3 class="flex-item__posts-heading">{{ news.title }}</h3>
@@ -71,13 +69,12 @@ export default {
   },
   data() {
     return {
+      comingSoonIcon: 'http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png',
       slides: [
-        { src: require("../assets/images/headset-arctis-pro.png"), route: "/news/-Ldeap0vDq8Tg6CBj4at" },
-        { src: require("../assets/images/mousepad-qck-limited.png"), route: "/news/-LdebJ8F1kGGYugHhOxx" },
-        { src: require("../assets/images/mice-rival-650.png"), route: "/news/-Ldebdgjs99W5LykxadF" },
-        { src: require("../assets/images/headset-arctis-5.png"), route: "/news/-LdecExfOxgkaA2qN72j" }
+        { src: require("../assets/images/notebook-1.jpg") },
+        { src: require("../assets/images/notebook-2.jpg") }
       ]
-    };
+    }
   },
   computed: {
     ...mapGetters(["getFetchAllNews", "getImgUpload"])
@@ -100,4 +97,6 @@ export default {
   .v-card:hover .news-image { transform: scale(1.2); }
 
   .news-image { transition: all .2s linear; }
+
+  .v-window-item { background: white; }
 </style>

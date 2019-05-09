@@ -30,9 +30,9 @@
         <i class="material-icons">create</i>
       </v-btn>
       
-      <v-alert :value="submitFlag" type="error" dismissible transition="moveInUp">Something is wrong</v-alert>
+      <v-alert :value="submitFlag" type="error" dismissible transition="moveInUp">Something is wrong. Please, fill correct the form!</v-alert>
 
-      <h1 v-if="alertInfo">Your post was added</h1>
+      <v-alert type="success" :value="alertInfo">Your post was added!</v-alert>
 
       <go-top :size=50 bg-color="#2196f3 "></go-top>
     </v-container>
@@ -108,7 +108,7 @@ export default {
 
         setTimeout(() => {
           this.submitFlag = false;
-        }, 3000)
+        }, 2500)
       }
     },
     clearPost() {

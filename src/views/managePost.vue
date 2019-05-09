@@ -20,9 +20,25 @@
         </v-flex>
         <v-flex>
           <div class="caption grey--text mb-2">Remove news</div>
-          <v-btn flat @click="deleteNews(index)">
-            <i class="far fa-trash-alt"></i>
-          </v-btn>
+
+          <v-dialog v-model="dialog" max-width="450" class="dialog">
+            <template v-slot:activator="{ on }">
+              <v-btn flat v-on="on">
+                <i class="far fa-trash-alt"></i>
+              </v-btn>
+            </template>
+
+            <v-card class="v-card-dialog">
+              <v-card-title class="headline">Remove News</v-card-title>
+              <v-card-text>The news will be removed. Are you sure?</v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="green darken-1" flat @click="dialog = false">Disagree</v-btn>
+                <v-btn color="green darken-1" flat @click="deleteNews(index)">Agree</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+
         </v-flex>
 
         <go-top :size=40 bg-color="#2196f3 "></go-top>
@@ -42,7 +58,7 @@ export default {
   },
   data() {
     return {
-
+      dialog: false
     }
   },
   computed: {
@@ -54,6 +70,7 @@ export default {
   methods: {
     deleteNews(key) {
       this.$store.dispatch("deleteNews", key);
+      this.dialog = false;
     }
   }
 }
@@ -64,6 +81,8 @@ export default {
 
   .v-card { border-left: 3px solid #2196f3; }
 
+  .v-card-dialog { border-left: none; border-radius: 20px; }
+  
   .flex { flex: 0 1 25%; }
 
   .flex:last-of-type {

@@ -1,10 +1,5 @@
-.v-image__image--cover {
-  background-size: contain;
-}
-
-.v-btn .v-btn__content .v-icon {
-  color: rgba(0,0,0,0.5);
-}
+.v-image__image--cover { background-size: contain; } 
+.v-btn .v-btn__content .v-icon { color: rgba(0,0,0,0.5); }
 
 .flex-item:nth-of-type(1) {
   flex: 1 1 50%;
@@ -26,24 +21,17 @@
         text-align: center;
         margin-bottom: .5rem;
       }
-      .flex-item__posts-heading {
-        font-family: $heading-font-family;
-      }
 
-      .flex-item__posts-desc {
-        font-family: $subheading-font-family;
-      }
+      .flex-item__posts-heading { font-family: $heading-font-family; }
 
-      .v-card__actions {
-        justify-content: center;
-      }
+      .flex-item__posts-desc { font-family: $subheading-font-family; }
+
+      .v-card__actions { justify-content: center; }
     }
   }
 }
 
-.flex-item:nth-of-type(2) {
-  flex: 1 1 50%;
-}
+.flex-item:nth-of-type(2) { flex: 1 1 50%; }
 
 .new-icon {
   position: absolute;
