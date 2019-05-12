@@ -24,7 +24,7 @@
                 <v-img class="new-icon" :src="comingSoonIcon"></v-img>
                 <v-card-title primary-title>
                   <div>
-                    <h3 class="flex-item__posts-heading">{{ news.title }}</h3>
+                    <h3 class="flex-item__posts-heading" @click="loadSingularNews(index)">{{ news.title }}</h3>
                     <div class="flex-item__posts-desc">
                       {{ news.description }}
                     </div>
@@ -71,8 +71,10 @@ export default {
     return {
       comingSoonIcon: 'http://pluspng.com/img-png/coming-soon-hd-png-download-coming-soon-png-images-transparent-gallery-advertisement-845.png',
       slides: [
-        { src: require("../assets/images/notebook-1.jpg") },
-        { src: require("../assets/images/notebook-2.jpg") }
+        { src: require("../assets/images/herobook-image.jpg") },
+        { src: require("../assets/images/hi9-image.jpg") },
+        { src: require("../assets/images/hi9-plus-image.jpg") },
+        { src: require("../assets/images/hi10-image.jpg") }
       ]
     }
   },
@@ -94,9 +96,11 @@ export default {
 <style lang="scss">
   @import "../styles/components/home.scss";
 
-  .v-card:hover .news-image { transform: scale(1.2); }
+  .v-card:hover .news-image { transform: scale(1.06); }
 
   .news-image { transition: all .2s linear; }
 
   .v-window-item { background: white; }
+
+  .flex-item__posts-heading:hover { cursor:  pointer; }
 </style>
