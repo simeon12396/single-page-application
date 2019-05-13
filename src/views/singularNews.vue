@@ -29,7 +29,12 @@
         </div>
       </div>
       
-      <div class="title">{{getSingularNews.author}}</div>
+      <div class="mt-5 mb-3">
+        <v-rating v-model="getSingularNews.rating" color="yellow"></v-rating>
+      </div>
+
+      <div class="subheading">Written by <span class="title">{{getSingularNews.author}}</span></div>
+
       <go-top :size=50 bg-color="#2196f3 "></go-top>     
     </v-container>
   </div>
@@ -64,4 +69,7 @@ export default {
 <style lang="scss" scoped>
   @import "../styles/components/singularNews.scss";
 
+  .v-rating { text-align: center; }
+
+  .subheading { text-align: right; }
 </style>

@@ -81,7 +81,7 @@ export default {
 
   .v-card { border-left: 3px solid #2196f3; }
 
-  .v-card-dialog { border-left: none; border-radius: 20px; }
+  .v-card-dialog { border-left: none; }
   
   .flex { flex: 0 1 25%; }
 
