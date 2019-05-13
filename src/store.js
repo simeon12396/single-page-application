@@ -267,6 +267,18 @@ export default new Vuex.Store({
     },
     setClearCurrentInfoNews(state) {
       state.informationForNews = null;
+    },
+    setResetCart(state) {
+      if(state.user === null) {
+        alert(`Please, login or signup!`);
+        router.push('/signin');
+      } else if (state.cartProducts.length < 1) {
+        alert('Your cart is empty!');
+      } else {
+        alert(`Thank you, ${state.user.user.email}! Your order was successful processed!`)
+        state.cartProducts = [];
+        router.push('/products/all_products');
+      }
     }
   },
   actions: {

@@ -1,5 +1,5 @@
 <template>
-  <v-layout wrap class="wrapper-flex" justify-center="">
+  <v-layout wrap class="wrapper-flex" justify-center>
     <v-flex v-for="(product, index) in products" :key="index">
       <v-card>
         <v-img :src="product.image" class="product-image"/>

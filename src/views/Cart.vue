@@ -24,16 +24,33 @@
       <span class="td"> 1 </span>
       <span class="td">$ {{product.price}} </span>
       <span class="td">
-        <v-btn flat mx-0 my-0 @click="setDeleteProduct(index)">
-          <i class="far fa-trash-alt"></i>
-        </v-btn>
+        <v-dialog v-model="dialog" max-width="450" class="dialog">
+          <template v-slot:activator="{ on }">
+            <v-btn flat v-on="on">
+              <i class="far fa-trash-alt"></i>
+            </v-btn>
+          </template>
+
+          <v-card class="v-card-dialog">
+            
+            <v-card-title class="headline">Remove Product</v-card-title>
+            <v-card-text>The product in cart will be removed. Are you sure?</v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="green darken-1" flat @click="dialog = false">Disagree</v-btn>
+              <v-btn color="green darken-1" flat @click="setDeleteProduct(index)">Agree</v-btn>
+            </v-card-actions>
+
+          </v-card>
+        </v-dialog>
       </span>
     </div>
 
     <div class="table-footer mt-2">
       <span class="tf">Total Price <p>$ {{totaPrice}}</p></span>
       <span class="tf">
-        <v-btn color="success checkout">Checkout</v-btn>
+        <v-btn color="success checkout" @click="setResetCart">Checkout</v-btn>
       </span>
     </div>
 
@@ -52,7 +69,8 @@ export default {
   },
   data() {
     return {
-      countProducts: null
+      countProducts: null,
+      dialog: false
     }
   },
   computed: {
@@ -66,7 +84,8 @@ export default {
   methods: {
     ...mapMutations([
       'setDeleteProduct',
-      'setCurrentProduct'
+      'setCurrentProduct',
+      'setResetCart'
     ])
   }
 }
