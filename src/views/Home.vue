@@ -18,7 +18,7 @@
           <v-layout wrap class="flex-item__posts">
             <v-flex v-for="(news, index) in getFetchAllNews" :key="index">
 
-              <v-card>
+              <v-card class="home-card">
                 <v-img :src="news.image" height="212px" class="news-image"></v-img>
 
                 <v-img class="new-icon" :src="comingSoonIcon"></v-img>
@@ -47,7 +47,7 @@
           <v-layout wrap class="flex-most-reviewed-products" justify-space-around>
             <v-flex v-for="(product, index) in arrayOfMostReviewedProducts" :key="index">
           
-              <v-card>
+              <v-card class="home-card">
                 <v-img :src="product.image" class="product-image"/>
 
                  <v-img class="new-icon popular-image" :src="popularImage"></v-img>
@@ -138,7 +138,7 @@ export default {
 <style lang="scss">
   @import "../styles/components/home.scss";
   
-  .v-card { padding-top: 1rem; }
+  .home-card { padding-top: 1rem; }
 
   .v-card:hover .news-image { transform: scale(1.1); }
 
