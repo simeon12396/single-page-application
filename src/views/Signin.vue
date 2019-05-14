@@ -15,27 +15,25 @@
                   <v-flex class="mb-2">
 
                     <v-layout column align-center>
-                      <v-flex class="mb-2">
-                        <div class="subheading">You don't have an account? You can <router-link to="/signup" class="child-subheading">create one</router-link></div>
-                      </v-flex>
-                      <v-flex>
+                      <v-flex class="mb-3">
                         <v-btn type="submit" dark color="#2196f3">Sign in</v-btn>
                       </v-flex>
+                      <v-flex>
+                         <div class="subheading mb-3">or Sign In with Google</div>
+                       </v-flex>
+                       <v-flex>
+                         <v-img :src="googleIcon" @click="socialLogin"></v-img>
+                       </v-flex>
                     </v-layout>
 
                   </v-flex>
 
                   <v-flex>
-
                      <v-layout column align-center>
                        <v-flex>
-                         <div class="subheading mb-2">or Sign In with Google</div>
-                       </v-flex>
-                       <v-flex>
-                         <v-img :src="googleIcon" @click="socialLogin"></v-img>
-                       </v-flex>
+                        <div class="subheading">You don't have an account? You can <router-link to="/signup" class="child-subheading">create one</router-link></div>
+                      </v-flex>
                      </v-layout>
-
                   </v-flex>
                 </v-layout>
               </v-card-actions>
