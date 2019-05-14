@@ -309,6 +309,18 @@ export default new Vuex.Store({
         alert('Oops. ' + signInError.message);
       })
     },
+    socialLogin({commit}) { 
+      const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+      firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then(userDataFromGoogle => {
+        commit('setUser', userDataFromGoogle);
+        commit('setIsAuthenticated', true);
+        router.push('/')
+      }) 
+    },
     logoutUser({commit}) {
       firebase
       .auth()
