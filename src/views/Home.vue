@@ -48,22 +48,26 @@
             <v-flex v-for="(product, index) in arrayOfMostReviewedProducts" :key="index">
           
               <v-card class="home-card">
-                <v-img :src="product.image" class="product-image"/>
+                <v-img :src="product.baseImage" class="product-image"/>
 
-                 <v-img class="new-icon popular-image" :src="popularImage"></v-img>
+                 <v-img class="new-icon popular-image" :src="sale"></v-img>
                 <v-card-title>
                   <router-link to="/products/product_details">
                     <div class="title" @click="setCurrentProduct(product)">{{ product.name }}</div>
                   </router-link>
 
-                  <v-layout class="product-price">
-                    <v-flex>
-                      <div class="subheading">R$ {{ product.price }}</div>
-                    </v-flex>
-                    <v-flex class="last-product-item">
-                      <div class="subheading">10 x {{ Math.round(product.price / 10) }}, 00 </div>
+                  <v-layout class="product-price" column>
+                    <v-flex v-for="(characteristic, index) in product.characteristics" :key="index">
+                      <i class="fas fa-check mr-3"></i>
+                      <span>{{characteristic}}</span>
                     </v-flex>
                   </v-layout>
+
+                  <div class="prices mt-3">
+                    <span class="old-price mr-2">{{product.oldPrice}} лв</span>
+                    <span class="promotion mr-2">(-30%)</span>
+                    <span class="new-price">{{product.newPrice}} лв</span>
+                  </div>
                 </v-card-title>
 
                 <v-card-actions>
@@ -103,12 +107,12 @@ export default {
         { src: require("../assets/images/hi9-plus-image.jpg") },
         { src: require("../assets/images/hi10-image.jpg") }
       ],
-      popularImage: "https://media.istockphoto.com/vectors/most-popular-sign-icon-bestseller-symbol-vector-id1017946144?s=170667a",
+      sale: require("../assets/images/sale.png"),
       arrayOfMostReviewedProducts: []
     }
   },
   computed: {
-    ...mapGetters(["getFetchAllNews", "getImgUpload","getAllProducts"])
+    ...mapGetters(["getFetchAllNews", "getImgUpload","getAllProducts"]),
   },
   created() {
     this.$store.dispatch("fetchAllNews");
@@ -120,12 +124,11 @@ export default {
       this.$router.push(`/news/${newsKey}`);
     },
     mostReviewedProducts() {
-
-      this.getAllProducts.forEach((item, index) => {
-        if(item.totalReviews >= 230) {
-          this.arrayOfMostReviewedProducts.push(item);
+      Object.values(this.getAllProducts).forEach((item, index) => {
+        if(item.reviewed >= 240) {
+          this.arrayOfMostReviewedProducts.push(item)
         }
-      })
+      });
     },
     ...mapMutations([
       'setCurrentProduct',
@@ -137,34 +140,4 @@ export default {
 
 <style lang="scss">
   @import "../styles/components/home.scss";
-  
-  .home-card { padding-top: 1rem; }
-
-  .v-card:hover .news-image { transform: scale(1.1); }
-
-  .news-image { transition: all .2s linear; padding-top: 1rem;}
-
-  .v-window-item { background: white; }
-
-  .flex-item__posts-heading:hover { cursor:  pointer; }
-
-  .headline { text-align: center; }
-
-  .popular-image { width: 60px;}
-
-  .flex-most-reviewed-products {
-    
-    .v-card, .title { margin-bottom: 1rem; }
-    .v-image { width: 200px; margin: 0 auto; transition: all .2s linear}
-
-    .popular-image { width: 70px; }
-
-    .flex { flex: 0 1 45%; }
-
-    .view-details-btn { margin-right: .5rem; }
-
-    .v-card:hover .v-image {transform: scale(1.03); }
-  }
-  
-  .application a { text-decoration: none; color: black; }
 </style>

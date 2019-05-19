@@ -11,18 +11,17 @@
     <div class="table-descriptions" v-for="(product, index) in getProductsInCart" :key="index">
       <router-link to="/products/product_details">
         <span class="td" @click="setCurrentProduct(product)">
-          <v-img :src="product.image"></v-img>
+          <v-img :src="product.baseImage"></v-img>
         </span>
         {{product.quantity}}
        </router-link> 
       <router-link to="/products/product_details">
         <span class="td" @click="setCurrentProduct(product)">
           <div class="title mb-2"> {{product.name}} </div>
-          <div class="body-1"> {{product.details}} </div>
         </span>
       </router-link> 
       <span class="td"> 1 </span>
-      <span class="td">$ {{product.price}} </span>
+      <span class="td">$ {{product.newPrice}} </span>
       <span class="td">
         <v-dialog v-model="dialog" max-width="450" class="dialog">
           <template v-slot:activator="{ on }">
@@ -78,7 +77,7 @@ export default {
       'getProductsInCart'
     ]),
     totaPrice() {
-      return this.getProductsInCart.reduce((current, next) => current + next.price, 0);
+      return this.getProductsInCart.reduce((current, next) => current + next.newPrice, 0);
     }
   },
   methods: {
@@ -87,7 +86,11 @@ export default {
       'setCurrentProduct',
       'setResetCart'
     ])
+  },
+  created() {
+    console.log(this.getProductsInCart);
   }
+
 }
 
 </script>

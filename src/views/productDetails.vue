@@ -1,17 +1,118 @@
 <template>
-  <v-layout justify-center>
-    <v-flex>
-      <v-img :src="getCurrentProduct.image"></v-img>
-      <v-rating v-model="getCurrentProduct.stars" color="yellow"></v-rating>
-      <div class="body-1">{{getCurrentProduct.totalReviews}} reviews.</div>
-    </v-flex>
+  <v-content>
+    
+    <v-layout justify-center>
 
-    <v-flex>
-      <div class="title mb-4 flex-item">{{getCurrentProduct.name}}</div>
-      <div class="display-1 mb-2 flex-item">$ {{getCurrentProduct.price}},00</div>
-      <v-btn block color="success flex-item" @click="setAddProduct(getCurrentProduct)">Add to cart </v-btn>
-    </v-flex>
-  </v-layout>
+      <v-flex class="mr-5 mt-5">
+        <v-img :src="getCurrentProduct.baseImage" class="base-image"></v-img>
+      </v-flex>
+
+      <v-flex class="second-flex-item">
+        <v-layout column justify-center>
+
+          <v-flex>
+            <div class="title mt-5 mb-3">{{getCurrentProduct.name}}</div>
+          </v-flex>
+
+          <v-flex>
+            <div class="headline mb-3">ОСНОВНИ ХАРАКТЕРИСТИКИ</div>
+          </v-flex>  
+
+          <v-flex v-for="(characteristic, index) in getCurrentProduct.characteristics" :key="index" class="mb-2">
+            <i class="fas fa-check mr-3"></i>
+            <span>{{characteristic}}</span>
+          </v-flex>
+
+          <v-flex>
+            <v-rating v-model="getCurrentProduct.stars" color="yellow"></v-rating>
+          </v-flex>
+          
+          <v-flex>
+            <div class="body-1">{{getCurrentProduct.reviewed}} reviews.</div>
+          </v-flex>
+
+          <v-flex class="mt-3">
+             <v-btn block color="success" @click="setAddProduct(product)">Add to cart </v-btn>
+          </v-flex>
+
+        </v-layout>
+
+      </v-flex>
+
+    </v-layout>
+
+    <v-layout column class="informations-side">
+      
+      <v-flex class="mt-5 mb-">
+        
+        <v-layout>
+          
+          <v-flex>
+            <v-img :src="getCurrentProduct.imageOne"></v-img>
+          </v-flex>
+
+          <v-flex class="pr-5">
+            <div class="title mb-3">{{getCurrentProduct.titleOne}}</div>
+            <div class="subheading">{{getCurrentProduct.informationOne}}</div>
+          </v-flex>
+        </v-layout>
+
+      </v-flex>
+
+
+      <v-flex class="mt-5 mb-4">
+        
+        <v-layout>
+
+          <v-flex class="pl-5">
+            <div class="title mb-3">{{getCurrentProduct.titleTwo}}</div>
+            <div class="subheading">{{getCurrentProduct.informationTwo}}</div>
+          </v-flex>
+          
+          <v-flex>
+            <v-img :src="getCurrentProduct.imageTwo"></v-img>
+          </v-flex>
+
+        </v-layout>
+
+      </v-flex>
+
+      <v-flex class="mt-5 mb-4">
+        
+        <v-layout>
+          
+          <v-flex>
+            <v-img :src="getCurrentProduct.imageThree"></v-img>
+          </v-flex>
+
+          <v-flex class="pr-5">
+            <div class="title mb-3">{{getCurrentProduct.titleThree}}</div>
+            <div class="subheading">{{getCurrentProduct.informationThree}}</div>
+          </v-flex>
+        </v-layout>
+
+      </v-flex>
+
+
+      <v-flex class="mt-5 mb-4">
+        
+        <v-layout>
+
+          <v-flex class="pl-5">
+            <div class="title mb-3">{{getCurrentProduct.titleFour}}</div>
+            <div class="subheading">{{getCurrentProduct.informationFour}}</div>
+          </v-flex>
+          
+          <v-flex>
+            <v-img :src="getCurrentProduct.imageFour"></v-img>
+          </v-flex>
+
+        </v-layout>
+
+      </v-flex>
+      
+    </v-layout>
+  </v-content>
 </template>
 
 <script>
@@ -37,26 +138,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .layout {
-    background-color: white;
-    width: 60vw;
-    margin: 2rem auto;
-    border-radius: 1rem;
-    padding-left: 2rem;
+  .v-content {
+    .flex { flex: 0 1 auto; }
 
-    .v-image { width: 300px; }
+    .second-flex-item { display: flex; }
 
-    .body-1 { padding-left: .7rem; }
+    .base-image { width: 450px; }
 
-    .flex { flex: 0 1 40%; }
+    .body-1 { text-align: center; }
 
-    .flex:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .headline { text-align: left; }
 
-      .flex-item { flex: 0 1 auto; }
+    .informations-side {
+
+      .flex { flex: 0 1 auto; }
+
+      .v-image { width: 250px; }
     }
   }
-
 </style>
