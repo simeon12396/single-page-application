@@ -13,7 +13,6 @@
         <span class="td" @click="setCurrentProduct(product)">
           <v-img :src="product.baseImage"></v-img>
         </span>
-        {{product.quantity}}
        </router-link> 
       <router-link to="/products/product_details">
         <span class="td" @click="setCurrentProduct(product)">
@@ -47,7 +46,7 @@
     </div>
 
     <div class="table-footer mt-2">
-      <span class="tf">Total Price <p>$ {{totaPrice}}</p></span>
+      <span class="tf">Total Price <p>$ {{totalPrice}}</p></span>
       <span class="tf">
         <v-btn color="success checkout" @click="setResetCart">Checkout</v-btn>
       </span>
@@ -76,8 +75,8 @@ export default {
     ...mapGetters([
       'getProductsInCart'
     ]),
-    totaPrice() {
-      return this.getProductsInCart.reduce((current, next) => current + next.newPrice, 0);
+    totalPrice() {
+      return this.getProductsInCart.reduce((accumulator, currentValue) => accumulator + currentValue.newPrice, 0);
     }
   },
   methods: {
@@ -90,7 +89,6 @@ export default {
   created() {
     console.log(this.getProductsInCart);
   }
-
 }
 
 </script>

@@ -90,11 +90,11 @@ export default new Vuex.Store({
         ]
       }
     },
-    allNotebooksV2: {
+    allNotebooksV3: {
       "Acer Nitro 5 (AN515-52)": {
         name: "Acer Nitro 5 (AN515-52)",
         oldPrice: 2399,
-        newPrice: 1.679,
+        newPrice: 1679,
         characteristics: {
           charOne: "Intel Core i7-8750H",
           charTwo: "NVIDIA GeForce GTX 1060",
@@ -120,7 +120,7 @@ export default new Vuex.Store({
       "Acer Predator Helios 500": {
         name: "Acer Predator Helios 500",
         oldPrice: 3399,
-        newPrice: 2.379,
+        newPrice: 2379,
         characteristics: {
           charOne: "AMD Ryzen 7 2700",
           charTwo: "AMD RX Vega 56",
@@ -146,7 +146,7 @@ export default new Vuex.Store({
       "Acer Aspire 7 (A717-72G)": {
         name: "Acer Aspire 7 (A717-72G)",
         oldPrice: 1949,
-        newPrice: 1.364,
+        newPrice: 1364,
         characteristics: {
           charOne: "Intel Core i7-8750H",
           charTwo: "NVIDIA GeForce GTX 1050",
@@ -196,7 +196,7 @@ export default new Vuex.Store({
         informationFour: "TravelMate B117 е снабден с безжична връзка, което позволява плавни бързи мрежови връзки. Опциите за кабелна връзка включват един USB 3.0 порт, един USB 2.0 порт и един HDMI порт с пълен размер."
       }
     },
-    allSmartphonesV2: {
+    allSmartphonesV3: {
       "Huawei Nova plus 32GB, сив цвят": {
         name: "Huawei Nova plus 32GB, сив цвят",
         oldPrice: 550,
@@ -324,13 +324,13 @@ export default new Vuex.Store({
       return state.image;
     },
     getAllProducts(state) {
-      return state.listOfAllProducts = {...state.allNotebooksV2, ...state.allSmartphonesV2};
+      return state.listOfAllProducts = {...state.allNotebooksV3, ...state.allSmartphonesV3};
     },
     getAllSmartphones(state) {
-      return state.allSmartphonesV2;
+      return state.allSmartphonesV3;
     },
     getAllNotebooks(state) {
-      return state.allNotebooksV2;
+      return state.allNotebooksV3;
     },
     getCurrentProduct(state) {
       return state.currentProduct;
