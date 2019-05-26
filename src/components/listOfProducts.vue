@@ -98,5 +98,4 @@ export default {
     top: 10px;
     width: 60px;
 }
-  
 </style>

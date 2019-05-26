@@ -20,24 +20,10 @@
         </v-flex>
         <v-flex>
           <div class="caption grey--text mb-2">Remove news</div>
-
-          <v-dialog v-model="dialog" max-width="450" class="dialog">
-            <template v-slot:activator="{ on }">
-              <v-btn flat v-on="on">
-                <i class="far fa-trash-alt"></i>
-              </v-btn>
-            </template>
-
-            <v-card class="v-card-dialog">
-              <v-card-title class="headline">Remove News</v-card-title>
-              <v-card-text>The news will be removed. Are you sure?</v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="green darken-1" flat @click="dialog = false">Disagree</v-btn>
-                <v-btn color="green darken-1" flat @click="deleteNews(index)">Agree</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
+          
+          <v-btn flat @click="deleteNews(index)">
+            <i class="far fa-trash-alt"></i>
+          </v-btn>
 
         </v-flex>
 

@@ -22,7 +22,7 @@
         <div class="information-side" v-for="(eachBox, index) in getInformationForNews.informationSide" :key="index">
           <v-img :src="eachBox.imageSrc"></v-img>
 
-          <div class="box-text">
+          <div class="box-text mb-3">
             <div class="title mb-2">{{eachBox.title}}</div>
             <div clas="body-2">{{eachBox.desc}}</div>
           </div>
@@ -72,4 +72,6 @@ export default {
   .v-rating { text-align: center; }
 
   .subheading { text-align: right; }
+
+  .information-side { margin-bottom: 2rem; }
 </style>

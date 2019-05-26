@@ -24,6 +24,7 @@
           </v-flex>
 
           <v-flex>
+            <div class="body-2 price-text">Оценка от клиенти: </div>
             <v-rating v-model="getCurrentProduct.stars" color="yellow"></v-rating>
           </v-flex>
           
@@ -32,7 +33,7 @@
           </v-flex>
 
           <v-flex class="mt-3">
-             <v-btn block color="success" @click="setAddProduct(product)">Add to cart </v-btn>
+             <v-btn block color="success" @click="setAddProduct(getCurrentProduct)">Add to cart </v-btn>
           </v-flex>
 
         </v-layout>
@@ -112,13 +113,19 @@
       </v-flex>
       
     </v-layout>
+
+    <go-top :size=50 bg-color="#2196f3 "></go-top>
   </v-content>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
+  components: {
+    GoTop
+  },
   data() {
     return {
    
@@ -142,16 +149,22 @@ export default {
     .flex { flex: 0 1 auto; }
 
     .second-flex-item { display: flex; }
-
+    
     .base-image { width: 450px; }
 
-    .body-1 { text-align: center; }
+    .body-1,
+    .price-text { text-align: center; }
 
     .headline { text-align: left; }
 
     .informations-side {
 
-      .flex { flex: 0 1 auto; }
+      .flex { 
+        flex: 0 1 auto; 
+        padding: 0 1rem;
+
+        .v-layout {  }
+      }
 
       .v-image { width: 250px; }
     }
