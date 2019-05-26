@@ -59,7 +59,7 @@ export default {
   name: "AppNavigation",
   data() {
     return {
-      toolbarTitle: "WebTech",
+      toolbarTitle: "tech-store",
       productsLinks: [
         { title: 'All Products', route: '/products/all_products', icon: ""},
         { title: 'Smartphones', route: '/products/smartphones', icon : "fas fa-mobile"},

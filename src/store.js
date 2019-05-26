@@ -19,6 +19,7 @@ export default new Vuex.Store({
     currentProduct:null,
     cartProducts: [],
     informationForNews: null,
+    listOfAllProducts: null,
     dataAboutNews: {
       "-Lef6E08Yw0COhwQHVIi": {
         headingSide: {
@@ -89,98 +90,218 @@ export default new Vuex.Store({
         ]
       }
     },
-    allNotebooks: [
-      {
-        name: 'Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
-        price: 2259,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/132381/3/132381386G1.png',
+    allNotebooksV3: {
+      "Acer Nitro 5 (AN515-52)": {
+        name: "Acer Nitro 5 (AN515-52)",
+        oldPrice: 2399,
+        newPrice: 1679,
+        characteristics: {
+          charOne: "Intel Core i7-8750H",
+          charTwo: "NVIDIA GeForce GTX 1060",
+          charThree: "16GB DDR4",
+          charFour: "256GB SSD + 1TB HDD",
+        },
         stars: 5,
-        totalReviews: 230,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+        reviewed: 250,
+        baseImage: require("./assets/images/acer-nitro-base.jpg"),
+        imageOne: require("./assets/images/acer-nitro-1.jpg"),
+        titleOne: "Отличен дизайн",
+        informationOne: "Acer Nitro 5 се отличава от тълпата със своя дизайн, който споделя агресивния външен вид на висококачествените Predator лаптопи на Acer. Получавате ярко червено осветяване на клавиатурата и големи изпускателни отвори от задната страна.",
+        imageTwo: require("./assets/images/acer-nitro-2.jpg"),
+        titleTwo: "Acer CoolBoost",
+        informationTwo: "Технологията Acer CoolBoost ви дава възможност да управлявате ръчно процеса на охлаждане, като позволява двойната система за охлаждане на вентилатора да доставя до 11% понижение на температурата на процесора и видеокартата.",
+        imageThree: require("./assets/images/acer-nitro-3.jpg"),
+        titleThree: "Висока производителност",
+        informationThree: "Acer Nitro 5 прдължава да бъде едно от най-атрактивните предложения в категорията на бюджетните геймърски ноутбуци. Ако сте геймър, разлика между конфигурацията с i5-8300H и тази с i7-8750H едва ли ще забележите.",
+        imageFour: require("./assets/images/acer-nitro-4.jpg"),
+        titleFour: "Чудесна картина",
+        informationFour: "Nitro 5 (AN515-52) идва с качествен IPS панел с Full HD резолюция (142 ppi), високи яркост и котраст и доста сериозен цветови обхват."
       },
-      {
-        name: 'Notebook Samsung Essentials E21 Intel Celeron Dual Core',
-        price: 1490,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/132165/8/132165801G1.jpg',
-        stars: 1,
-        totalReviews: 1,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+      "Acer Predator Helios 500": {
+        name: "Acer Predator Helios 500",
+        oldPrice: 3399,
+        newPrice: 2379,
+        characteristics: {
+          charOne: "AMD Ryzen 7 2700",
+          charTwo: "AMD RX Vega 56",
+          charThree: "16B DDR4",
+          charFour: "256GB SSD NVMe + 1TB HDD"
+        },
+        stars: 4,
+        reviewed: 200,
+        baseImage: require("./assets/images/acer-predator-base.jpg"),
+        imageOne: require("./assets/images/acer-predator-1.png"),
+        titleOne: "Най-ново поколение процесори",
+        informationOne: "Acer Predator Helios 500 е гейминг лаптопът който разполага с толкова много видове конфигурации, че ще ви е трудно да изберете. Като започнем от процесорите, Predator 500 разполага с най-новото и най-доброто от Intel в лицето на Core i9-8950HK. За любителите на AMD имаме и вариант с процесор - AMD Ryzen 7 2700, който със свойте 8 ядра и overclock до 4.10 GHz изпълнява всяка задача без затруднение.",
+        imageTwo: require("./assets/images/acer-predator-2.png"),
+        titleTwo: "Скорост като никой друг",
+        informationTwo: "Acer не са пренабрагнали и възможностите за дисково пространство. Лаптопът разполага с място за Хард диск и с два М.2 слота за разширение на паметта, който поддържат PCIe SSD с възможност и за увеличаване на скоростта с Raid 0.",
+        imageThree: require("./assets/images/acer-predator-3.png"),
+        titleThree: "Дисплей подходящ за всеки",
+        informationThree: "Както при процесор и видеокарти, Acer Predator Helios 500 предлага и избор на екрани. Можете да изберете от 2 вида - UHD 4K IPS панел работещ с опреснение до 60Hz и Full HD панел работещ с опреснение до 144Hz - подходящ за запалените геймъри.",
+        imageFour: require("./assets/images/acer-predator-4.png"),
+        titleFour: "Клавиатура с RGB подсветка",
+        informationFour: "Клавиатура е много приятна за писане и игра. Тя има и RGB LED подсветка, а WASD клавишите и стрелките са акцентирани в синьо, за да подчертаят предназначението на тази машина. Горните 6 бутона могат да бъдат използвани за различни режими на производителност и профили на вентилаторите."
       },
-      {
-        name: 'Notebook Samsung Expert X22 Intel Core 7 i5 8GB',
-        price: 2307,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/132260/6/132260681G1.jpg',
-        stars: 4.4,
-        totalReviews: 340,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-      {
-        name: 'Notebook VAIO Fit 15S B1211B Intel Core i5 4GB',
-        price: 2599,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/133252/7/133252789G1.jpg',
-        stars: 3,
-        totalReviews: 30,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-      {
-        name: 'Notebook Dell Alienware - i7 16GB',
-        price: 14000,
-        image: 'https://images-submarino.b2w.io/produtos/01/00/sku/34470/9/34470934G1.jpg',
-        stars: 2,
-        totalReviews: 248,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-    ],
-    allSmartphones: [
-      {
-        name: 'Smartphone Xiaomi Mi A1 dual Android one 7.1',
-        price: 1199,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/sku/29296/2/29296259G1.jpg',
-        stars: 0,
-        totalReviews: 0,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-      {
-        name: 'Smartphone Moto G 5S Dual Chip Android 7.0',
-        price: 929,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/132474/0/132474081G1.png',
-        stars: 1.5,
-        totalReviews: 11,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-      {
-        name: 'iPhone 8 Dourado 64GB Tela 4.7" IOS 11',
-        price: 3949,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/132651/7/132651745G1.jpg',
-        stars: 1,
-        totalReviews: 2,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-      },
-      {
-        name: 'Smartphone Samsung Galaxy S7 Edge',
-        price: 1943,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/125911/8/125911828G1.png',
+      "Acer Aspire 7 (A717-72G)": {
+        name: "Acer Aspire 7 (A717-72G)",
+        oldPrice: 1949,
+        newPrice: 1364,
+        characteristics: {
+          charOne: "Intel Core i7-8750H",
+          charTwo: "NVIDIA GeForce GTX 1050",
+          charThree: "8GB DDR4",
+          charFour: "128GB SSD NVMe + 1TB HDD"
+        },
         stars: 5,
-        totalReviews: 310,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+        reviewed: 350,
+        baseImage: require("./assets/images/acer-aspire-base.jpg"),
+        imageOne: require("./assets/images/acer-aspire-1.jpg"),
+        titleOne: "Устойчив дизайн",
+        informationOne: "Acer Aspise 7 (A717-71G) съдържа полиран алуминий в конструкцията си като основен материал, което води до по-голяма стабилност. Клавиатурата също изглежда обновена и по-удобна.",
+        imageTwo: require("./assets/images/acer-aspire-2.jpg"),
+        titleTwo: "Качество на дисплея",
+        informationTwo: "Дисплеят на Acer Aspire 7 (A717-71G) има Full HD панел с IPS матрица. Диагоналът му е 17.3-инчов (43.94 см), а резолюцията 1920 х 1080 пиксела, като притежава изключително комфортни ъгли на видимост.",
+        imageThree: require("./assets/images/acer-aspire-3.jpg"),
+        titleThree: "Множество интерфейси",
+        informationThree: "Ноутбукът притежава много добре подредена конфигурация от портове - отляво намираме повечето конектори като RJ-45 за LAN, USB-C 3.1 (Gen 1), HDMI, USB 3.0 и SD картов четец. Дясната страна приютява буксата за зареждане, два USB 2.0 конектора и 3.5 мм аудио жак.",
+        imageFour: require("./assets/images/acer-aspire-4.jpg"),
+        titleFour: "Прочети подробното ни ревю",
+        informationFour: "Наред с появата на серията Aspire 5, Acer представиха по-мощна версия, наречена Aspire 7, която използва четири ядрени процесори Intel Kaby Lake-H и предлага прилична видеокарта GTX 1050, която е достатъчна за до умерен гейминг."
       },
-      {
-        name: 'Smartphone Motorola Moto G6 Plus',
-        price: 1699,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/133453/1/133453185G1.jpg',
-        stars: 2.9,
-        totalReviews: 42,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+      "Acer TravelMate B117": {
+        name: "Acer TravelMate B117",
+        oldPrice: 469,
+        newPrice: 328,
+        characteristics: {
+          charOne: "Intel Celeron N3060",
+          charTwo: "Intel HD Graphics 400",
+          charThree: "4GB DDR3",
+          charFour: "64GB eMMC"
+        },
+        stars: 4,
+        reviewed: 190,
+        baseImage: require("./assets/images/acer-travelmate-base.jpg"),
+        imageOne: require("./assets/images/acer-travelmate-1.jpg"),
+        titleOne: "Лаптоп, предназначен за модерната класна стая",
+        informationOne: "Acer попълва гамата си от мобилни компютри с модел лаптоп, който е компактен и предназначен за нуждите на образованието. На капака е разположен светодиод, който променя цвета според избрания вариант за отговор при задаване на въпрос.",
+        imageTwo: require("./assets/images/acer-travelmate-2.jpg"),
+        titleTwo: "Устойчив дизайн",
+        informationTwo: "TravelMate B117 има рамка с гумена лента, която рамкира шасито, за да предпази устройството от неочаквани удари и капки. Теглото му е едва 1.35 кг. Клавиатурата е устойчива на разливане, водоустойчив дизайн, който предпазва от случайни разливи .",
+        imageThree: require("./assets/images/acer-travelmate-3.jpg"),
+        titleThree: "По-добър начин за взаймодействие",
+        informationThree: "Acer TravelMate B117 включва в себе си вградено Acer TeachSmart решение и чрез него се позволяват нови начини на комуникация в класната стая. Учителите получават инструменти и клауд-базирани услуги, с помощта на които размножават и разпространяват учебните материали и събират завършените работите на учениците.",
+        imageFour: require("./assets/images/acer-travelmate-4.jpg"),
+        titleFour: "Богати възможности за свързване",
+        informationFour: "TravelMate B117 е снабден с безжична връзка, което позволява плавни бързи мрежови връзки. Опциите за кабелна връзка включват един USB 3.0 порт, един USB 2.0 порт и един HDMI порт с пълен размер."
+      }
+    },
+    allSmartphonesV3: {
+      "Huawei Nova plus 32GB, сив цвят": {
+        name: "Huawei Nova plus 32GB, сив цвят",
+        oldPrice: 550,
+        newPrice: 385,
+        characteristics: {
+          charOne: '5.5" IPS',
+          charTwo: "8-ядрен",
+          charThree: "две SIM карти",
+          charFour: "16-мегапикселова камера"
+        },
+        stars: 5,
+        reviewed: 220,
+        baseImage: require("./assets/images/huawei-nova-base.jpg"),
+        imageOne: require("./assets/images/huawei-nova-1.jpg"),
+        titleOne: "Стилно метално тяло",
+        informationOne: "Huawei nova plus разполага с изключително изискан дизайн с дебелина на профила от само 7.3 милиметра и заоблени краища за по-комфортен захват. Конструкцията включва алуминиево-магнезиева сплав, като 90% от тялото е изработено от метал. В предната част има 2.5D сстъкло с леки извивки по краищата, които правят цялостната визия на смартфона още по-привлекателна.",
+        imageTwo: require("./assets/images/huawei-nova-2.jpg"),
+        titleTwo: "5.5-инчов дисплей",
+        informationTwo: "Дисплеят на смартфона е с диагонал от 5.5 инча, като разделителната му способност е Full HD (1920 x 1080). Това ще ви осигури висока детайлност на картината с гъстота на пикселите от около 401ppi, Насреща е и IPS матрица, която ще направи изображенията по-контрастни и ярки, а ъглите на видимост по-широки.",
+        imageThree: require("./assets/images/huawei-nova-3.jpg"),
+        titleThree: "16MP камера",
+        informationThree: "Основната камера е 16-мегапикселова, като тя може да се похвали с оптична стабилизация, която ще премахне нежеланите размазани изображения. Благодарение на f/2.0 блендата пък ще може да се възползвате и от качествени снимки при по-ниска осветеност, а насреща са още бърз автофокус, двойна LED светкавица, както и възможност за заснемане на 4K видео.",
+        imageFour: require("./assets/images/huawei-nova-4.jpg"),
+        titleFour: "8-ядрен Snapdragon 625",
+        informationFour: "Huawei nova plus също притежава Snapdragon 625, който вклчва осем Cortex-A53 ядра, работещи с тактова честота до 2.00GHz. На разположение са също Adreno 506 видеокарта, както и 3GB оперативна памет, така че може да очаквате пъргава работа с устройството."
       },
-      {
-        name: 'Smartphone Motorola Moto Z3 Play',
-        price: 2999,
-        image: 'https://images-submarino.b2w.io/produtos/01/00/item/133666/1/133666164G1.jpg',
-        stars: 0.5,
-        totalReviews: 1,
-        details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+      "Samsung Galaxy A9 (SM-А950F) 128GB, син цвят": {
+        name: "Samsung Galaxy A9 (SM-А950F) 128GB, син цвят",
+        oldPrice: 898,
+        newPrice: 628,
+        characteristics: {
+          charOne: '6.3" Super AMOLED',
+          charTwo: "8-ядрен",
+          charThree: "две SIM карти",
+          charFour: "четворна задна 24MP камера"
+        },
+        stars: 5,
+        reviewed: 400,
+        baseImage: require("./assets/images/samsung-a9-base.jpg"),
+        imageOne: require("./assets/images/samsung-a9-1.jpg"),
+        titleOne: "4 пъти повече забавление с първата четворна камера в света",
+        informationOne: "Открий четири пъти повече начини да правиш зашеметяващи снимки. Galaxy A9 има четири задни камери, за да улавя почти всеки момент. Освен това усъвършенства снимките ти с лекота благодарение на интелигентните функции като оптимизиране на сцените и откриване на дефекти.",
+        imageTwo: require("./assets/images/samsung-a9-2.jpg"),
+        titleTwo: "Направена така, че да правиш повече",
+        informationTwo: "Възползвай се от предимството на хипермобилния начин на живот с колоритния Galaxy A9. Увековечи прекрасни снимки с първата в света четворна камера. Потопи се в 6,3-инчовия инфинити дисплей и съраунд звук Dolby Atmos. Благодарение на елегантния и ергономичен дизайн ръцете ти ще се чувстват комфортно, докато ти продължаваш да бъдеш свързан.",
+        imageThree: require("./assets/images/samsung-a9-3.jpg"),
+        titleThree: "Приближаване към детайлите",
+        informationThree: "Улови пейзажа, където и да си. Galaxy A9 има 10-MP камера с телеобектив и 2х оптично приближаване, която заснема красиви и подробни снимки дори и от разстояние.",
+        imageFour: require("./assets/images/samsung-a9-4.jpg"),
+        titleFour: "Стил, в който ще се влюбиш",
+        informationFour: "Galaxy A9 е създаден да подхожда на вкуса ти, независимо дали предпочиташ класическия цвят - гланцов „черен хайвер” или искаш да се отърсиш от монохромните цветове с дръзките и уникални преливащи цветове „синя лимонада” или „бонбонено розово”. На усещане е също толкова приятен, колкото и на външен вид, заради своя ергономичен дизайн за по-удобен захват."
       },
-    ]
+      "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, червен": {
+        name: "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, червен",
+        oldPrice: 359,
+        newPrice: 251,
+        characteristics: {
+          charOne: "6-инчов Super AMOLED",
+          charTwo: "4-ядрен",
+          charThree: "сензор за пръстов отпечатък",
+          charFour: "двойна 13 + 5-мегапикселова камера"
+        },
+        stars: 5,
+        reviewed: 230,
+        baseImage: require("./assets/images/samsung-j6-base.jpg"),
+        imageOne: require("./assets/images/samsung-j6-1.jpg"),
+        titleOne: "По-голям екран, повече видимост",
+        informationOne: "Приготви се да достигнеш ново, по-високо ниво на изживяването по време на гледане. Galaxy J6+ разполага с поразителен 6.0-инчов инфинити дисплей с оптимизирано съотношение на екрана 18.5:9. А благодарение на олекотения и фин дизайн можеш да гледаш любимото си съдържание още по-удобно.",
+        imageTwo: require("./assets/images/samsung-j6-2.jpg"),
+        titleTwo: "Oтличи се със стил",
+        informationTwo: "Луксозен стил, толкова приятен на допир. Galaxy J6+ се отличава с гладък дизайн със заоблени ръбове, който приляга удобно в ръката. Освен това се откроява с първокласно гланцово покритие и се предлага в серия от модерни цветови опции, включително в червено, черно и сиво за допълнителен стилен щрих.",
+        imageThree: require("./assets/images/samsung-j6-3.jpg"),
+        titleThree: "Затвор, който се измества, където е необходим",
+        informationThree: "Благодарение на предната 8-мегапикселова и задната 13-мегапикселова двойна камера 13MP(F1,9)/5MP(F2,2) Galaxy J6+ вдъхва повече увереност при заснемане на снимки. Плаващият бутон за затвора улеснява процеса на снимане, защото ти дава възможността да освободиш затвора от всяко място на екрана.",
+        imageFour: require("./assets/images/samsung-j6-4.jpg"),
+        titleFour: "Създай история със снимките си",
+        informationFour: "Редактирай снимките и видеоклиповете си, за да създадеш своя лична история и да организираш изображенията и видеоклиповете си по теми. Със своето съдържание можеш лесно да ги категоризираш благодарение на по-усъвършенстваните функции."
+      },
+      "Huawei Mate 20 Lite, 64GB, златист цвят": {
+        name: "Huawei Mate 20 Lite, 64GB, златист цвят",
+        oldPrice: 549,
+        newPrice: 384,
+        characteristics: {
+          charOne: '6.3" IPS',
+          charTwo: "8-ядрен",
+          charThree: "сензор за пръстов отпечатък",
+          charFour: "20-мегапикселова камера"
+        },
+        stars: 5,
+        reviewed: 400,
+        baseImage: require("./assets/images/huawei-p20-lite-base.jpg"),
+        imageOne: require("./assets/images/huawei-p20-lite-1.jpg"),
+        titleOne: "Твоят доверен партньор",
+        informationOne: "Зашеметяващата картина на 6.3-инчовия FHD+ (2340 x 1080) FullView дисплей те потапя в магически моменти, а гладкият симетричен корпус гарантира удобно ползване на устройството в ръката ти.",
+        imageTwo: require("./assets/images/huawei-p20-lite-2.jpg"),
+        titleTwo: "Селфи майстор с изкуствен интелект",
+        informationTwo: "Функцията за автоматично разкрасяване, с помощта на изкуствения интелект, прави селфитата ти забележителни. Предната 24 MP + 2 MP камера с реалистичен боке ефект, придава зашеметяваща композиция на селфитата ти. Това е възможно благодарение на изкуствения интелект, който е базиран на осем сценични категории, за да те заснеме в пълния ти блясък.",
+        imageThree: require("./assets/images/huawei-p20-lite-3.jpg"),
+        titleThree: "Брилянтна светкавица: HDR Pro",
+        informationThree: "Професионалната HDR технология е също подбрена с помощта на изкуствен интелект, позволявайки правенето на превюта в реално време на HDR снимки и видеоклипове. Резултатът са реалистични цветни снимки и ясни записи, дори при слаба осветеност.",
+        imageFour: require("./assets/images/huawei-p20-lite-4.jpg"),
+        titleFour: "Надежден и издръжлив",
+        informationFour: "Мощната 3 750 mAh батерия гарантира, че довереният ти партньор е там за теб денонощно. HUAWEI Quick Charge ти позволява да поддържаш ритъма си през цялото време."
+      }
+    }
   },
   plugins: [createPersistedState()],
   getters: {
@@ -203,13 +324,13 @@ export default new Vuex.Store({
       return state.image;
     },
     getAllProducts(state) {
-      return state.allNotebooks.concat(state.allSmartphones);
+      return state.listOfAllProducts = {...state.allNotebooksV3, ...state.allSmartphonesV3};
     },
     getAllSmartphones(state) {
-      return state.allSmartphones;
+      return state.allSmartphonesV3;
     },
     getAllNotebooks(state) {
-      return state.allNotebooks;
+      return state.allNotebooksV3;
     },
     getCurrentProduct(state) {
       return state.currentProduct;

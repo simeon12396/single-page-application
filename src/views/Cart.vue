@@ -11,44 +11,31 @@
     <div class="table-descriptions" v-for="(product, index) in getProductsInCart" :key="index">
       <router-link to="/products/product_details">
         <span class="td" @click="setCurrentProduct(product)">
-          <v-img :src="product.image"></v-img>
+          <v-img :src="product.baseImage"></v-img>
         </span>
-        {{product.quantity}}
-       </router-link> 
+       </router-link>
+
       <router-link to="/products/product_details">
         <span class="td" @click="setCurrentProduct(product)">
           <div class="title mb-2"> {{product.name}} </div>
-          <div class="body-1"> {{product.details}} </div>
         </span>
       </router-link> 
+
       <span class="td"> 1 </span>
-      <span class="td">$ {{product.price}} </span>
+
+      <span class="td">$ {{product.newPrice}} </span>
+
       <span class="td">
-        <v-dialog v-model="dialog" max-width="450" class="dialog">
-          <template v-slot:activator="{ on }">
-            <v-btn flat v-on="on">
-              <i class="far fa-trash-alt"></i>
-            </v-btn>
-          </template>
-
-          <v-card class="v-card-dialog">
-            
-            <v-card-title class="headline">Remove Product</v-card-title>
-            <v-card-text>The product in cart will be removed. Are you sure?</v-card-text>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="green darken-1" flat @click="dialog = false">Disagree</v-btn>
-              <v-btn color="green darken-1" flat @click="setDeleteProduct(index)">Agree</v-btn>
-            </v-card-actions>
-
-          </v-card>
-        </v-dialog>
+        <v-btn flat @click="setDeleteProduct(index)">
+          <i class="far fa-trash-alt"></i>
+        </v-btn> 
       </span>
+      
     </div>
 
     <div class="table-footer mt-2">
-      <span class="tf">Total Price <p>$ {{totaPrice}}</p></span>
+      <span class="tf">Total Price <p>$ {{totalPrice}}</p></span>
+
       <span class="tf">
         <v-btn color="success checkout" @click="setResetCart">Checkout</v-btn>
       </span>
@@ -77,8 +64,8 @@ export default {
     ...mapGetters([
       'getProductsInCart'
     ]),
-    totaPrice() {
-      return this.getProductsInCart.reduce((current, next) => current + next.price, 0);
+    totalPrice() {
+      return this.getProductsInCart.reduce((accumulator, currentValue) => accumulator + currentValue.newPrice, 0);
     }
   },
   methods: {
@@ -87,6 +74,9 @@ export default {
       'setCurrentProduct',
       'setResetCart'
     ])
+  },
+  created() {
+    console.log(this.getProductsInCart);
   }
 }
 

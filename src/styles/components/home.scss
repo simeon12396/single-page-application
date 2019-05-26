@@ -39,3 +39,41 @@
   top: 10px;
   width: 100px;
 }
+
+.home-card { padding-top: 1rem; }
+
+  .v-card:hover .news-image { transform: scale(1.1); }
+
+  .news-image { transition: all .2s linear; padding-top: 1rem;}
+
+  .v-window-item { background: white; }
+
+  .flex-item__posts-heading:hover { cursor:  pointer; }
+
+  .headline { text-align: center; }
+
+  .popular-image { width: 60px;}
+
+  .flex-most-reviewed-products {
+    
+    .v-card, .title { margin-bottom: 1rem; }
+    .v-image { width: 200px; margin: 0 auto; transition: all .2s linear}
+
+    .popular-image { width: 70px; }
+
+    .flex { flex: 0 1 45%; }
+
+    .view-details-btn { margin-right: .5rem; }
+
+    .v-card:hover .v-image {transform: scale(1.03); }
+
+    .old-price { text-decoration: line-through; font-weight: 400; }
+
+    .new-price { font-size: 1.5rem; color: red; font-weight: 600; }
+
+    .promotion { font-size: .8rem; color: red; }
+  }
+  
+  .application a { text-decoration: none; color: black; }
+
+  .v-card__title { flex-direction: column; }
