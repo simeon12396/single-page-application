@@ -501,6 +501,14 @@ export default new Vuex.Store({
         commit('setImgUpload', response.data);
       })
     },
+    sendSubscribeMsg({commit}, payload) {
+      firebase.database().ref('subscribers').push(payload)
+      .then(response => alert('Thank you for subscribing!'))
+    },
+    sendContactUsMsg({commit}, payload) {
+      firebase.database().ref('connectedUsers').push({...payload})
+      .then(response => alert('Thank you for contacting us!'))
+    }
     /*currentProduct({commit}, payload) {
       commit('setCurrentProduct', payload);
     },
