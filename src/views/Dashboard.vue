@@ -28,17 +28,23 @@
       </v-flex>
 
       <v-flex>
-        <span>That is your main dashboard!</span>
+        <span>This is your main dashboard!</span>
       </v-flex>
     </v-layout>
+
+    <go-top :size=40 bg-color="#2196f3 "></go-top>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
+import GoTop from '@inotom/vue-go-top';
 
 export default {
   name: "Dashboard",
+  components: {
+    GoTop
+  },
   data() {
     return {
       dashboardImgSrc: require("../assets/images/coffe.jpg"),

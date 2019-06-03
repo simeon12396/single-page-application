@@ -4,7 +4,9 @@
     <v-layout justify-center>
 
       <v-flex class="mr-5 mt-5">
-        <v-img :src="getCurrentProduct.baseImage" class="base-image"></v-img>
+        <v-zoomer style="width:400px; height: 400px;">
+          <v-img :src="getCurrentProduct.baseImage" class="base-image"></v-img>
+        </v-zoomer> 
       </v-flex>
 
       <v-flex class="second-flex-item">

@@ -21,7 +21,7 @@
         </v-list>
       </v-menu>
 
-      <v-btn flat to="/dashboard" v-if="getIsAuthenticated">
+      <v-btn flat to="/dashboard" v-if="loginAsAdministrator">
         <span>Dashboard</span>
       </v-btn>
 
@@ -59,6 +59,7 @@ export default {
   name: "AppNavigation",
   data() {
     return {
+      isAdministrator: false,
       toolbarTitle: "tech-store",
       productsLinks: [
         { title: 'All Products', route: '/products/all_products', icon: ""},
@@ -71,7 +72,15 @@ export default {
     /*
       getIsAuthenticated() { return this.$store.getters['getIsAuthenticated']; } -> -> is equal to code below!
     */
-    ...mapGetters(["getIsAuthenticated", "getProductsInCart"])
+    ...mapGetters(["getIsAuthenticated", "getProductsInCart"]),
+    loginAsAdministrator() {
+      if(this.getIsAuthenticated && (this.$store.state.user.user.email === "sieroteev@gmail.com")) {
+        return this.isAdministrator = true;
+      } 
+      else {
+        return this.isAdministrator = false;
+      }
+    }
   },
   methods: {
     /*
