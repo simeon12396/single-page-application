@@ -18,9 +18,9 @@
                   </v-layout>
 
                   <div class="prices mt-3">
-                    <span class="old-price mr-2">{{product.oldPrice}} лв</span>
+                    <span class="old-price mr-2">{{product.oldPrice}} $</span>
                     <span class="promotion mr-2">(-30%)</span>
-                    <span class="new-price">{{product.newPrice}} лв</span>
+                    <span class="new-price">{{product.newPrice}} $</span>
                   </div>
                 </v-card-title>
 

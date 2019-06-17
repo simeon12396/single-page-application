@@ -90,7 +90,7 @@ export default new Vuex.Store({
         ]
       }
     },
-    allNotebooksV3: {
+    allNotebooksV4: {
       "Acer Nitro 5 (AN515-52)": {
         name: "Acer Nitro 5 (AN515-52)",
         oldPrice: 2399,
@@ -105,17 +105,17 @@ export default new Vuex.Store({
         reviewed: 250,
         baseImage: require("./assets/images/acer-nitro-base.jpg"),
         imageOne: require("./assets/images/acer-nitro-1.jpg"),
-        titleOne: "Отличен дизайн",
-        informationOne: "Acer Nitro 5 се отличава от тълпата със своя дизайн, който споделя агресивния външен вид на висококачествените Predator лаптопи на Acer. Получавате ярко червено осветяване на клавиатурата и големи изпускателни отвори от задната страна.",
+        titleOne: "Excellent design",
+        informationOne: "Acer Nitro 5 stands out from the crowd with its design that shares the aggressive look of Acer's high-quality Predator laptops. You get bright red keyboard illumination and large exhaust openings on the back side.",
         imageTwo: require("./assets/images/acer-nitro-2.jpg"),
         titleTwo: "Acer CoolBoost",
-        informationTwo: "Технологията Acer CoolBoost ви дава възможност да управлявате ръчно процеса на охлаждане, като позволява двойната система за охлаждане на вентилатора да доставя до 11% понижение на температурата на процесора и видеокартата.",
+        informationTwo: "Acer CoolBoost Technology gives you the ability to manually control the cooling process by allowing the dual cooling fan system to deliver up to 11% decrease in CPU and video card temperature.",
         imageThree: require("./assets/images/acer-nitro-3.jpg"),
-        titleThree: "Висока производителност",
-        informationThree: "Acer Nitro 5 прдължава да бъде едно от най-атрактивните предложения в категорията на бюджетните геймърски ноутбуци. Ако сте геймър, разлика между конфигурацията с i5-8300H и тази с i7-8750H едва ли ще забележите.",
+        titleThree: "High performance",
+        informationThree: "Acer Nitro 5 is one of the most attractive offers in the category of budget gaming notebooks. If you are a gamer, the difference between the configuration with i5-8300H and the one with i7-8750H will hardly notice.",
         imageFour: require("./assets/images/acer-nitro-4.jpg"),
-        titleFour: "Чудесна картина",
-        informationFour: "Nitro 5 (AN515-52) идва с качествен IPS панел с Full HD резолюция (142 ppi), високи яркост и котраст и доста сериозен цветови обхват."
+        titleFour: "Great picture",
+        informationFour: "Nitro 5 (AN515-52) comes with a quality IPS panel with Full HD resolution (142 PPI), high brightness and kotrast and a fairly serious color range."
       },
       "Acer Predator Helios 500": {
         name: "Acer Predator Helios 500",
@@ -131,17 +131,17 @@ export default new Vuex.Store({
         reviewed: 200,
         baseImage: require("./assets/images/acer-predator-base.jpg"),
         imageOne: require("./assets/images/acer-predator-1.png"),
-        titleOne: "Най-ново поколение процесори",
-        informationOne: "Acer Predator Helios 500 е гейминг лаптопът който разполага с толкова много видове конфигурации, че ще ви е трудно да изберете. Като започнем от процесорите, Predator 500 разполага с най-новото и най-доброто от Intel в лицето на Core i9-8950HK. За любителите на AMD имаме и вариант с процесор - AMD Ryzen 7 2700, който със свойте 8 ядра и overclock до 4.10 GHz изпълнява всяка задача без затруднение.",
+        titleOne: "Latest Generation Processors",
+        informationOne: "Acer Predator Helios 500 is the gaming laptop which has so many types of configurations that you will find it difficult to choose. Starting from the processors, the Predator 500 features the latest and greatest of Intel in the face of Core I9-8950HK. For AMD fans We also have an option with a processor-AMD Ryzen 7 2700, which with its 8 cores and overclock to 4.10 GHz perform every task without difficulty.",
         imageTwo: require("./assets/images/acer-predator-2.png"),
-        titleTwo: "Скорост като никой друг",
-        informationTwo: "Acer не са пренабрагнали и възможностите за дисково пространство. Лаптопът разполага с място за Хард диск и с два М.2 слота за разширение на паметта, който поддържат PCIe SSD с възможност и за увеличаване на скоростта с Raid 0.",
+        titleTwo: "Speed like no other",
+        informationTwo: "Acer does not have the capability to be overwritten and the available disk space. The laptop has a hard drive space with two M. 2 Memory expandable slots that support PCIe SSD with the ability to increase speed with Raid 0.",
         imageThree: require("./assets/images/acer-predator-3.png"),
-        titleThree: "Дисплей подходящ за всеки",
-        informationThree: "Както при процесор и видеокарти, Acer Predator Helios 500 предлага и избор на екрани. Можете да изберете от 2 вида - UHD 4K IPS панел работещ с опреснение до 60Hz и Full HD панел работещ с опреснение до 144Hz - подходящ за запалените геймъри.",
+        titleThree: "Display suitable for everyone",
+        informationThree: "As with processor and video cards, the Acer Predator Helios 500 also offers a selection of screens. You can choose from 2 types-UHD 4K IPS panel working with refreshing up to 60Hz and Full HD panel working with refreshing up to 144Hz-suitable for avid gamers.",
         imageFour: require("./assets/images/acer-predator-4.png"),
-        titleFour: "Клавиатура с RGB подсветка",
-        informationFour: "Клавиатура е много приятна за писане и игра. Тя има и RGB LED подсветка, а WASD клавишите и стрелките са акцентирани в синьо, за да подчертаят предназначението на тази машина. Горните 6 бутона могат да бъдат използвани за различни режими на производителност и профили на вентилаторите."
+        titleFour: "RGB backlit keyboard",
+        informationFour: "Keyboard is very enjoyable for writing and playing. It also has an RGB LED backlight, and the WASD keys and arrows are accented in blue to emphasize the purpose of this machine. The above 6 buttons can be used for different performance modes and fans profiles."
       },
       "Acer Aspire 7 (A717-72G)": {
         name: "Acer Aspire 7 (A717-72G)",
@@ -157,17 +157,17 @@ export default new Vuex.Store({
         reviewed: 350,
         baseImage: require("./assets/images/acer-aspire-base.jpg"),
         imageOne: require("./assets/images/acer-aspire-1.jpg"),
-        titleOne: "Устойчив дизайн",
-        informationOne: "Acer Aspise 7 (A717-71G) съдържа полиран алуминий в конструкцията си като основен материал, което води до по-голяма стабилност. Клавиатурата също изглежда обновена и по-удобна.",
+        titleOne: "Durable design",
+        informationOne: "Acer Aspise 7 (A717-71G) contains polished aluminum in its structure as the main material, resulting in greater stability. The keyboard also looks upgraded and more comfortable.",
         imageTwo: require("./assets/images/acer-aspire-2.jpg"),
-        titleTwo: "Качество на дисплея",
-        informationTwo: "Дисплеят на Acer Aspire 7 (A717-71G) има Full HD панел с IPS матрица. Диагоналът му е 17.3-инчов (43.94 см), а резолюцията 1920 х 1080 пиксела, като притежава изключително комфортни ъгли на видимост.",
+        titleTwo: "Display quality",
+        informationTwo: "The Acer Aspire 7 (A717-71G) display has a Full HD panel with an IPS matrix. Its diagonal is 17.3-inch (43.94 cm), and the resolution 1920 x 1080 pixels, having extremely comfortable angles of vision.",
         imageThree: require("./assets/images/acer-aspire-3.jpg"),
-        titleThree: "Множество интерфейси",
-        informationThree: "Ноутбукът притежава много добре подредена конфигурация от портове - отляво намираме повечето конектори като RJ-45 за LAN, USB-C 3.1 (Gen 1), HDMI, USB 3.0 и SD картов четец. Дясната страна приютява буксата за зареждане, два USB 2.0 конектора и 3.5 мм аудио жак.",
+        titleThree: "Multiple interfaces",
+        informationThree: "The notebook has a very well arranged port configuration-on the left we find most connectors such as RJ-45 for LAN, USB-C 3.1 (Gen 1), HDMI, USB 3.0 and SD card reader. The right side shelters the charging socket, two USB 2.0 connectors and a 3.5 mm audio jack.",
         imageFour: require("./assets/images/acer-aspire-4.jpg"),
-        titleFour: "Прочети подробното ни ревю",
-        informationFour: "Наред с появата на серията Aspire 5, Acer представиха по-мощна версия, наречена Aspire 7, която използва четири ядрени процесори Intel Kaby Lake-H и предлага прилична видеокарта GTX 1050, която е достатъчна за до умерен гейминг."
+        titleFour: "Read our detailed review",
+        informationFour: "Alongside the advent of the Aspire 5 series, Acer presented a more powerful version called Aspire 7, which uses four Intel Kaby Lake-H core processors and offers a decent GTX 1050 video card, which is sufficient for up to moderate gaming."
       },
       "Acer TravelMate B117": {
         name: "Acer TravelMate B117",
@@ -183,123 +183,123 @@ export default new Vuex.Store({
         reviewed: 190,
         baseImage: require("./assets/images/acer-travelmate-base.jpg"),
         imageOne: require("./assets/images/acer-travelmate-1.jpg"),
-        titleOne: "Лаптоп, предназначен за модерната класна стая",
-        informationOne: "Acer попълва гамата си от мобилни компютри с модел лаптоп, който е компактен и предназначен за нуждите на образованието. На капака е разположен светодиод, който променя цвета според избрания вариант за отговор при задаване на въпрос.",
+        titleOne: "Laptop Designed for modern classroom",
+        informationOne: "Acer completes its range of mobile PCs with a laptop model that is compact and designed for the needs of education. An LED is located on the lid, which changes color according to the chosen option to answer when asking a question.",
         imageTwo: require("./assets/images/acer-travelmate-2.jpg"),
-        titleTwo: "Устойчив дизайн",
-        informationTwo: "TravelMate B117 има рамка с гумена лента, която рамкира шасито, за да предпази устройството от неочаквани удари и капки. Теглото му е едва 1.35 кг. Клавиатурата е устойчива на разливане, водоустойчив дизайн, който предпазва от случайни разливи .",
+        titleTwo: "Durable design",
+        informationTwo: "The TravelMate B117 has a frame with a rubber band that ramps the chassis to protect the device from unexpected shocks and drops. Its weight is only 1.35 kg. The keyboard is a spill-resistant, waterproof design that protects against accidental spills.",
         imageThree: require("./assets/images/acer-travelmate-3.jpg"),
-        titleThree: "По-добър начин за взаймодействие",
-        informationThree: "Acer TravelMate B117 включва в себе си вградено Acer TeachSmart решение и чрез него се позволяват нови начини на комуникация в класната стая. Учителите получават инструменти и клауд-базирани услуги, с помощта на които размножават и разпространяват учебните материали и събират завършените работите на учениците.",
+        titleThree: "A better way to Synergy",
+        informationThree: "Acer TravelMate B117 incorporates a built-in Acer TeachSmart solution and allows for new ways of communicating in the classroom. Teachers receive tools and cloud-based services, with the help of which they multiply and disseminate the learning materials and collect the completed work of the students.",
         imageFour: require("./assets/images/acer-travelmate-4.jpg"),
-        titleFour: "Богати възможности за свързване",
-        informationFour: "TravelMate B117 е снабден с безжична връзка, което позволява плавни бързи мрежови връзки. Опциите за кабелна връзка включват един USB 3.0 порт, един USB 2.0 порт и един HDMI порт с пълен размер."
+        titleFour: "Rich connectivity",
+        informationFour: "The TravelMate B117 is equipped with a wireless connection that allows for smooth, fast network connections. Cable connection options include one USB 3.0 port, one USB 2.0 port and one full-size HDMI port."
       }
     },
-    allSmartphonesV3: {
-      "Huawei Nova plus 32GB, сив цвят": {
-        name: "Huawei Nova plus 32GB, сив цвят",
+    allSmartphonesV4: {
+      "Huawei Nova plus 32GB, silver": {
+        name: "Huawei Nova plus 32GB, silver",
         oldPrice: 550,
         newPrice: 385,
         characteristics: {
           charOne: '5.5" IPS',
-          charTwo: "8-ядрен",
-          charThree: "две SIM карти",
-          charFour: "16-мегапикселова камера"
+          charTwo: "Octa-core 2.0 GHz Cortex-A53",
+          charThree: "Hybrid Dual SIM",
+          charFour: "16MP"
         },
         stars: 5,
         reviewed: 220,
         baseImage: require("./assets/images/huawei-nova-base.jpg"),
         imageOne: require("./assets/images/huawei-nova-1.jpg"),
-        titleOne: "Стилно метално тяло",
-        informationOne: "Huawei nova plus разполага с изключително изискан дизайн с дебелина на профила от само 7.3 милиметра и заоблени краища за по-комфортен захват. Конструкцията включва алуминиево-магнезиева сплав, като 90% от тялото е изработено от метал. В предната част има 2.5D сстъкло с леки извивки по краищата, които правят цялостната визия на смартфона още по-привлекателна.",
+        titleOne: "Stylish metal menu",
+        informationOne: "Huawei Nova Plus has an exceptionally exquisite design with a profile thickness of just 7.3 millimeters and rounded edges for a more comfortable grip. The design includes aluminum-magnesium alloy, with 90% of the body made of metal. In front there are 2.5 D withglass with light curves on the edges that make the overall vision of the smartphone even more attractive.",
         imageTwo: require("./assets/images/huawei-nova-2.jpg"),
-        titleTwo: "5.5-инчов дисплей",
-        informationTwo: "Дисплеят на смартфона е с диагонал от 5.5 инча, като разделителната му способност е Full HD (1920 x 1080). Това ще ви осигури висока детайлност на картината с гъстота на пикселите от около 401ppi, Насреща е и IPS матрица, която ще направи изображенията по-контрастни и ярки, а ъглите на видимост по-широки.",
+        titleTwo: '5.5." display',
+        informationTwo: "The smartphone display has a diagonal of 5.5 inches and its resolution is Full HD (1920 x 1080). This will provide you with a high-definition picture with a pixel density of about 401ppi, it is also an IPS matrix that will make images more contrasting and vivid, and the angles of visibility wider.",
         imageThree: require("./assets/images/huawei-nova-3.jpg"),
-        titleThree: "16MP камера",
-        informationThree: "Основната камера е 16-мегапикселова, като тя може да се похвали с оптична стабилизация, която ще премахне нежеланите размазани изображения. Благодарение на f/2.0 блендата пък ще може да се възползвате и от качествени снимки при по-ниска осветеност, а насреща са още бърз автофокус, двойна LED светкавица, както и възможност за заснемане на 4K видео.",
+        titleThree: "16MP camera",
+        informationThree: "The main camera is 16-megapixel, as it can boast of optical stabilization that will remove unwanted blurry images. Thanks to the F/2.0 aperture, you will also be able to take advantage of quality photos in lower light conditions, as well as fast autofocus, dual LED flash, and 4K video capture capability.",
         imageFour: require("./assets/images/huawei-nova-4.jpg"),
-        titleFour: "8-ядрен Snapdragon 625",
-        informationFour: "Huawei nova plus също притежава Snapdragon 625, който вклчва осем Cortex-A53 ядра, работещи с тактова честота до 2.00GHz. На разположение са също Adreno 506 видеокарта, както и 3GB оперативна памет, така че може да очаквате пъргава работа с устройството."
+        titleFour: "Qualcomm Snapdragon 625",
+        informationFour: "Huawei Nova Plus also owns the Snapdragon 625, which includes eight Cortex-A53 cores operating at a clock speed of up to 2.00 GHz. A Adreno 506 video card is also available, as well as 3GB of RAM, so you can expect a agile handling of the device."
       },
-      "Samsung Galaxy A9 (SM-А950F) 128GB, син цвят": {
-        name: "Samsung Galaxy A9 (SM-А950F) 128GB, син цвят",
+      "Samsung Galaxy A9 (SM-А950F) 128GB, blue": {
+        name: "Samsung Galaxy A9 (SM-А950F) 128GB, blue",
         oldPrice: 898,
         newPrice: 628,
         characteristics: {
           charOne: '6.3" Super AMOLED',
-          charTwo: "8-ядрен",
-          charThree: "две SIM карти",
-          charFour: "четворна задна 24MP камера"
+          charTwo: "Octa-Core Processor",
+          charThree: "Dual SIM",
+          charFour: "24MP Front camera"
         },
         stars: 5,
         reviewed: 400,
         baseImage: require("./assets/images/samsung-a9-base.jpg"),
         imageOne: require("./assets/images/samsung-a9-1.jpg"),
-        titleOne: "4 пъти повече забавление с първата четворна камера в света",
-        informationOne: "Открий четири пъти повече начини да правиш зашеметяващи снимки. Galaxy A9 има четири задни камери, за да улавя почти всеки момент. Освен това усъвършенства снимките ти с лекота благодарение на интелигентните функции като оптимизиране на сцените и откриване на дефекти.",
+        titleOne: "Four times more fun with the worlds' first quad camera",
+        informationOne: "Find four times more ways to take stunning photos. The Galaxy A9 has four rear cameras to capture almost every moment. It also refines your photos with ease thanks to intelligent features like scene optimisation and defect detection.",
         imageTwo: require("./assets/images/samsung-a9-2.jpg"),
-        titleTwo: "Направена така, че да правиш повече",
-        informationTwo: "Възползвай се от предимството на хипермобилния начин на живот с колоритния Galaxy A9. Увековечи прекрасни снимки с първата в света четворна камера. Потопи се в 6,3-инчовия инфинити дисплей и съраунд звук Dolby Atmos. Благодарение на елегантния и ергономичен дизайн ръцете ти ще се чувстват комфортно, докато ти продължаваш да бъдеш свързан.",
+        titleTwo: "Designed to do more",
+        informationTwo: "Take advantage the advantage of the hyper-mobile lifestyle with the colorful Galaxy A9. Perpetuate wonderful pictures with the world's first quadruple camera. Immerse yourself in the 6.3-inch infinity display and Dolby Atmos surround sound. Thanks to the sleek and ergonomic design, your hands will feel comfortable while you are still connected.",
         imageThree: require("./assets/images/samsung-a9-3.jpg"),
-        titleThree: "Приближаване към детайлите",
-        informationThree: "Улови пейзажа, където и да си. Galaxy A9 има 10-MP камера с телеобектив и 2х оптично приближаване, която заснема красиви и подробни снимки дори и от разстояние.",
+        titleThree: "Zoom in to details",
+        informationThree: "Capture the landscape wherever you are. The Galaxy A9 has a 10-MP camera with a telephoto lens and 2x optical zoom that captures beautiful and detailed photos even remotely.",
         imageFour: require("./assets/images/samsung-a9-4.jpg"),
-        titleFour: "Стил, в който ще се влюбиш",
-        informationFour: "Galaxy A9 е създаден да подхожда на вкуса ти, независимо дали предпочиташ класическия цвят - гланцов „черен хайвер” или искаш да се отърсиш от монохромните цветове с дръзките и уникални преливащи цветове „синя лимонада” или „бонбонено розово”. На усещане е също толкова приятен, колкото и на външен вид, заради своя ергономичен дизайн за по-удобен захват."
+        titleFour: "Style you will love",
+        informationFour: 'The Galaxy A9 is designed to suit your taste, whether you prefer the classic colour-glossy "Black Caviar" or you want to shake off the monochrome colors with bold and unique iridescent colors "blue lemonade" or "Candy Pink". The sensation is just as pleasing as the look, because of its ergonomic design for a more comfortable grip.'
       },
-      "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, червен": {
-        name: "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, червен",
+      "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, black": {
+        name: "Samsung Galaxy J6+ (SM-J610F), Dual 32GB, black",
         oldPrice: 359,
         newPrice: 251,
         characteristics: {
-          charOne: "6-инчов Super AMOLED",
-          charTwo: "4-ядрен",
-          charThree: "сензор за пръстов отпечатък",
-          charFour: "двойна 13 + 5-мегапикселова камера"
+          charOne: "6-inch Super AMOLED",
+          charTwo: "Qualcomm Snapdragon 425",
+          charThree: "Fingerprint sensor",
+          charFour: "13MP + 5MP"
         },
         stars: 5,
         reviewed: 230,
         baseImage: require("./assets/images/samsung-j6-base.jpg"),
         imageOne: require("./assets/images/samsung-j6-1.jpg"),
-        titleOne: "По-голям екран, повече видимост",
-        informationOne: "Приготви се да достигнеш ново, по-високо ниво на изживяването по време на гледане. Galaxy J6+ разполага с поразителен 6.0-инчов инфинити дисплей с оптимизирано съотношение на екрана 18.5:9. А благодарение на олекотения и фин дизайн можеш да гледаш любимото си съдържание още по-удобно.",
+        titleOne: "Larger screen, more visibility",
+        informationOne: "Get ready to reach a new, higher level of experience while watching. Galaxy J6 + features an astounding 6.0-inch infinity display with optimized screen ratio 18.5:9. And thanks to its lightweight and subtle design, you can look at your favourite content even more comfortably.",
         imageTwo: require("./assets/images/samsung-j6-2.jpg"),
-        titleTwo: "Oтличи се със стил",
-        informationTwo: "Луксозен стил, толкова приятен на допир. Galaxy J6+ се отличава с гладък дизайн със заоблени ръбове, който приляга удобно в ръката. Освен това се откроява с първокласно гланцово покритие и се предлага в серия от модерни цветови опции, включително в червено, черно и сиво за допълнителен стилен щрих.",
+        titleTwo: "It is a style",
+        informationTwo: "Luxurious style, so pleasant to the touch. The Galaxy J6 + features a slick design with rounded edges that fits comfortably in the hand. It also stands out with a premium glossy finish and comes in a range of modern color options, including red, black and grey for an extra stylish touch.",
         imageThree: require("./assets/images/samsung-j6-3.jpg"),
-        titleThree: "Затвор, който се измества, където е необходим",
-        informationThree: "Благодарение на предната 8-мегапикселова и задната 13-мегапикселова двойна камера 13MP(F1,9)/5MP(F2,2) Galaxy J6+ вдъхва повече увереност при заснемане на снимки. Плаващият бутон за затвора улеснява процеса на снимане, защото ти дава възможността да освободиш затвора от всяко място на екрана.",
+        titleThree: "A prison that shifts where necessary",
+        informationThree: "Thanks to the front 8-megapixel and rear 13-megapixel dual-camera 13MP (F1,9)/5MP (F2,2) Galaxy J6 + inspires more confidence in capturing photos. The floating shutter button facilitates the shooting process because it gives you the ability to release the shutter from anywhere on the screen.",
         imageFour: require("./assets/images/samsung-j6-4.jpg"),
-        titleFour: "Създай история със снимките си",
-        informationFour: "Редактирай снимките и видеоклиповете си, за да създадеш своя лична история и да организираш изображенията и видеоклиповете си по теми. Със своето съдържание можеш лесно да ги категоризираш благодарение на по-усъвършенстваните функции."
+        titleFour: "Create a story with your photos",
+        informationFour: "Edit your photos and videos to create your own personal history and organize your images and videos by theme. With its content, you can easily categorize them thanks to more advanced features."
       },
-      "Huawei Mate 20 Lite, 64GB, златист цвят": {
-        name: "Huawei Mate 20 Lite, 64GB, златист цвят",
+      "Huawei Mate 20 Lite, 64GB": {
+        name: "Huawei Mate 20 Lite, 64GB",
         oldPrice: 549,
         newPrice: 384,
         characteristics: {
           charOne: '6.3" IPS',
-          charTwo: "8-ядрен",
-          charThree: "сензор за пръстов отпечатък",
-          charFour: "20-мегапикселова камера"
+          charTwo: "HiSilicon Kirin 710",
+          charThree: "Fingerprint sensor",
+          charFour: "20MP + 2MP"
         },
         stars: 5,
         reviewed: 400,
         baseImage: require("./assets/images/huawei-p20-lite-base.jpg"),
         imageOne: require("./assets/images/huawei-p20-lite-1.jpg"),
-        titleOne: "Твоят доверен партньор",
-        informationOne: "Зашеметяващата картина на 6.3-инчовия FHD+ (2340 x 1080) FullView дисплей те потапя в магически моменти, а гладкият симетричен корпус гарантира удобно ползване на устройството в ръката ти.",
+        titleOne: "Your trusted Partner",
+        informationOne: "The stunning picture of the 6.3-inch FHD + (2340 x 1080) FullView display immerses you in magical moments, while the smooth symmetrical casing ensures comfortable use of the device in your hand.",
         imageTwo: require("./assets/images/huawei-p20-lite-2.jpg"),
-        titleTwo: "Селфи майстор с изкуствен интелект",
-        informationTwo: "Функцията за автоматично разкрасяване, с помощта на изкуствения интелект, прави селфитата ти забележителни. Предната 24 MP + 2 MP камера с реалистичен боке ефект, придава зашеметяваща композиция на селфитата ти. Това е възможно благодарение на изкуствения интелект, който е базиран на осем сценични категории, за да те заснеме в пълния ти блясък.",
+        titleTwo: "Selfie master with artificial intelligence",
+        informationTwo: "The auto-beautify feature, with the help of artificial intelligence, makes your selfies remarkable. The front 24 MP + 2 MP camera with realistic bokeh effect gives a stunning composition to your selfies. This is possible thanks to artificial intelligence, which is based on eight-stage categories to capture you in full splendor.",
         imageThree: require("./assets/images/huawei-p20-lite-3.jpg"),
-        titleThree: "Брилянтна светкавица: HDR Pro",
-        informationThree: "Професионалната HDR технология е също подбрена с помощта на изкуствен интелект, позволявайки правенето на превюта в реално време на HDR снимки и видеоклипове. Резултатът са реалистични цветни снимки и ясни записи, дори при слаба осветеност.",
+        titleThree: "Brilliant Flash: HDR Pro",
+        informationThree: "The professional HDR technology is also a subshore with the help of artificial intelligence, allowing the real-time use of HDR photos and videos. The result is realistic color photographs and clear recordings, even in low light conditions.",
         imageFour: require("./assets/images/huawei-p20-lite-4.jpg"),
-        titleFour: "Надежден и издръжлив",
-        informationFour: "Мощната 3 750 mAh батерия гарантира, че довереният ти партньор е там за теб денонощно. HUAWEI Quick Charge ти позволява да поддържаш ритъма си през цялото време."
+        titleFour: "Reliable and durable",
+        informationFour: "The powerful 3 750 mAh battery ensures your trusted partner is there for you around the clock. HUAWEI Quick Charge allows you to maintain your rhythm all the time."
       }
     }
   },
@@ -324,13 +324,13 @@ export default new Vuex.Store({
       return state.image;
     },
     getAllProducts(state) {
-      return state.listOfAllProducts = {...state.allNotebooksV3, ...state.allSmartphonesV3};
+      return state.listOfAllProducts = {...state.allNotebooksV4, ...state.allSmartphonesV4};
     },
     getAllSmartphones(state) {
-      return state.allSmartphonesV3;
+      return state.allSmartphonesV4;
     },
     getAllNotebooks(state) {
-      return state.allNotebooksV3;
+      return state.allNotebooksV4;
     },
     getCurrentProduct(state) {
       return state.currentProduct;

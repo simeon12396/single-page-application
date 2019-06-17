@@ -100,6 +100,7 @@ export default {
     }
   },
   methods: {
+    //logikata e sushtaprosto gledam ot tuk i go pisha pak shtoto veche go pisah vednuj ama sega ne stava eba lo gp -,-
     submitAddNews(formData){
       if(!this.$v.$invalid) {
         this.$store.dispatch('submitAddNews', formData);

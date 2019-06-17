@@ -17,7 +17,7 @@
           </v-flex>
 
           <v-flex>
-            <div class="headline mb-3">ОСНОВНИ ХАРАКТЕРИСТИКИ</div>
+            <div class="headline mb-3">KEY CHARACTERISTICS</div>
           </v-flex>  
 
           <v-flex v-for="(characteristic, index) in getCurrentProduct.characteristics" :key="index" class="mb-2">
@@ -26,7 +26,7 @@
           </v-flex>
 
           <v-flex>
-            <div class="body-2 price-text">Оценка от клиенти: </div>
+            <div class="body-2 price-text">Customer rating: </div>
             <v-rating v-model="getCurrentProduct.stars" color="yellow"></v-rating>
           </v-flex>
           
