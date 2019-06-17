@@ -29,7 +29,9 @@
 
                <v-flex class="mt-3">
                  <div class="subheading mb-3">Subscribe to our newsletter</div>
-                 <v-text-field name="email" label="Enter your Email address" type="text" v-model="subscribeInputData"></v-text-field>
+                 <v-text-field name="email" label="Enter your Email address" type="text" v-model="subscribeInputData" 
+                 ></v-text-field>
+                 {{$v.subscribeInputData}}
                  <v-btn type="submit" color="success" @click="sendSubscribeMsg">Send</v-btn>
                </v-flex>
              </v-layout>
@@ -39,11 +41,13 @@
              <v-form>
               <div class="wrapper">
                 <v-text-field name="name" label="Name" type="text" v-model="formData.name"></v-text-field>
+                {{$v.formData.name}}
                 <v-text-field name="email" label="Email" type="text" v-model="formData.email"></v-text-field>
+                {{$v.formData.email}}
               </div>
 
               <v-text-field height="50px" class="input-message" name="message" label="Message" type="text" v-model="formData.message"></v-text-field>
-
+                {{$v.formData.message}}
               <v-btn type="submit" color="success" @click.prevent="sendContactUsMsg">Send</v-btn>  
             </v-form>
            </v-flex>
@@ -71,6 +75,7 @@
 import { ShareFacebook, ShareTwitter, ShareGooglePlus } from 'vue-share-social';
 import { mapActions } from "vuex";
 import { setTimeout } from 'timers';
+import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default {
   components: {
@@ -88,16 +93,49 @@ export default {
       }
     }
   },
+  validations: {
+    subscribeInputData: {
+      required,
+      email
+    },
+    formData: {
+      name: {
+        required
+      },
+      email: {
+        required,
+        email
+      },
+      message: {
+        required,
+        minLength: minLength(5)
+      }
+    }
+  },
   methods: {
+    isSubscribingFormValid(){
+      return !this.$v.subscribeInputData.$invalid;
+    },
+    isContactUsFormValid(){
+      return !this.$v.formData.$invalid;
+    },
     sendSubscribeMsg() {
-      this.$store.dispatch('sendSubscribeMsg', this.subscribeInputData);
+      if(this.isSubscribingFormValid()) {
+        this.$store.dispatch('sendSubscribeMsg', this.subscribeInputData);
+      } else {
+        alert('Something is wrong! Please, fill correctly your email address!');
+      }
 
       setTimeout(() => {
         this.subscribeInputData = null;
-      }, 2000);
+      }, 2000); 
     },
     sendContactUsMsg() {
-      this.$store.dispatch('sendContactUsMsg', this.formData);
+      if(this.isContactUsFormValid()) {
+         this.$store.dispatch('sendContactUsMsg', this.formData);
+      } else {
+         alert('Something is wrong! Please, fill the form correctly!');
+      }
 
       setTimeout(() => {
         this.formData.name = null;

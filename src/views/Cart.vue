@@ -99,7 +99,7 @@ export default {
     padding-bottom: .5rem;
     margin-bottom: .5rem;
   }
-
+  
   .th:nth-child(1) { grid-area: product; }
 
   .th:nth-child(2) { grid-area: name; }
