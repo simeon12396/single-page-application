@@ -30,7 +30,7 @@
         <i class="material-icons">create</i>
       </v-btn>
       
-      <v-alert :value="submitFlag" type="error" dismissible transition="moveInUp">Something is wrong. Please, fill correct the form!</v-alert>
+      <v-alert :value="submitFlag" type="error" dismissible transition="moveInUp">Something is wrong. Please, fill the form correctly!</v-alert>
 
       <v-alert type="success" :value="alertInfo">Your post was added!</v-alert>
 
