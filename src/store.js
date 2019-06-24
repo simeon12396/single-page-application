@@ -439,6 +439,7 @@ export default new Vuex.Store({
       .then(userDataFromGoogle => {
         commit('setUser', userDataFromGoogle);
         commit('setIsAuthenticated', true);
+        alert(`Welcome back, administrator!`);
         router.push('/')
       }) 
     },

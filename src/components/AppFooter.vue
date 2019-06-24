@@ -31,7 +31,7 @@
                  <div class="subheading mb-3">Subscribe to our newsletter</div>
                  <v-text-field name="email" label="Enter your Email address" type="text" v-model="subscribeInputData" 
                  ></v-text-field>
-                 {{$v.subscribeInputData}}
+                 
                  <v-btn type="submit" color="success" @click="sendSubscribeMsg">Send</v-btn>
                </v-flex>
              </v-layout>
@@ -41,13 +41,12 @@
              <v-form>
               <div class="wrapper">
                 <v-text-field name="name" label="Name" type="text" v-model="formData.name"></v-text-field>
-                {{$v.formData.name}}
+                
                 <v-text-field name="email" label="Email" type="text" v-model="formData.email"></v-text-field>
-                {{$v.formData.email}}
               </div>
 
               <v-text-field height="50px" class="input-message" name="message" label="Message" type="text" v-model="formData.message"></v-text-field>
-                {{$v.formData.message}}
+                
               <v-btn type="submit" color="success" @click.prevent="sendContactUsMsg">Send</v-btn>  
             </v-form>
            </v-flex>
