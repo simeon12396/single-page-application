@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@inotom/vue-go-top": "^1.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "firebase": "^5.9.3",
     "install": "^0.12.2",
     "npm": "^6.9.0",
